@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\Android game\\Battlefront\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_foreground.png",
+        "source": "E:\\Android game\\Battlefront\\android\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "E:\\Android game\\Battlefront\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "E:\\Android game\\Battlefront\\android\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Android game\\Battlefront\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
+        "source": "E:\\Android game\\Battlefront\\android\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    }
+]
