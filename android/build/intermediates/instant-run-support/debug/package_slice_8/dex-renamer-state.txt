@@ -1,4 +1,4 @@
-#Fri Mar 26 18:00:37 ALMT 2021
+#Fri Mar 26 19:49:21 ALMT 2021
 base.0=E\:\\Android game\\Battlefront\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_8
 renamed.0=classes.dex
 file.0=E\:\\Android game\\Battlefront\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_8\\classes.dex

@@ -1,4 +1,4 @@
-#Fri Mar 26 18:23:52 ALMT 2021
+#Mon Mar 29 19:45:57 ALMT 2021
 file.9=E\:\\Android game\\Battlefront\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\libgdx-utils-0.13.2_53905f933dc1ab4677385eab1afbf5ea17d0280e\\classes.dex
 base.10=E\:\\Android game\\Battlefront\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\kryo-2.24.0_fbf41217fbde445abe141bdca9a364d8082c40ff
 file.8=E\:\\Android game\\Battlefront\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gdx-backend-android-1.9.8_5ea0d95efe1138c97b3a117d503bcd5f02a11009\\classes.dex

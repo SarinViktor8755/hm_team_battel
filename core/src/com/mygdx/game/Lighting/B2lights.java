@@ -15,9 +15,8 @@ import box2dLight.DirectionalLight;
 import box2dLight.PointLight;
 import box2dLight.RayHandler;
 
-public class B2lights {
+public class B2lights{
     private World world;
-
 
     private PointLight pointLightHero;
     private DirectionalLight pointLightHeroDirectiona;
@@ -26,12 +25,9 @@ public class B2lights {
     private RayHandler rayHandler;
 
  //   private Box2DDebugRenderer box2DDebugRenderer;
-
-    private ArrayList<PointLight> pointLightsList;
-    private int count = 0;
+    private ArrayList<PointLight> pointLightsList = new ArrayList<PointLight>();
     public B2lights() {
-
-
+        pointLightsList = new ArrayList<PointLight>();
         this.world = new World(new Vector2(0, 0), true);
         this.rayHandler = new RayHandler(this.world);
         rayHandler.setAmbientLight(.1f);
@@ -42,9 +38,7 @@ public class B2lights {
 
 ////////////////////
         Color colorPoint;
-        pointLightsList = new ArrayList<PointLight>();
         PointLight pl;
-
         pointLightHero = new PointLight(rayHandler, 20, Color.WHITE, 1800, 0, 0);
         for (int i = 0; i < 5000; i += 1000) {
             for (int j = 0; j < 5000; j += 1000) {
