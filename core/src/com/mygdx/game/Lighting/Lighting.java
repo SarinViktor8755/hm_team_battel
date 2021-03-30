@@ -27,11 +27,9 @@ public class Lighting {
     public Lighting(MainGaming mg) {
         this.mainGaming = mg;
         this.nith = mainGaming.getZk().assetsManagerGame.get("character/character", TextureAtlas.class).findRegion("night");
-
-
         maxFreme = 4;
         tempVector = new Vector2();
-//        tempBulet = new TreeSet<Integer>();
+
     }
 
     public void updateLighting(float delta) {
@@ -41,8 +39,6 @@ public class Lighting {
 
     public void renderLighting(Batch spriteBatch) {
 
-        //System.out.println(shadow);
-//        System.out.println(time_index);
         int x = (int) mainGaming.getHero().getPosition().x;
         int y = (int) mainGaming.getHero().getPosition().y;
         for (int i = 0; i < size_t * 100; i += size_t) {

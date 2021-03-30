@@ -26,9 +26,9 @@ public class B2lights{
 
  //   private Box2DDebugRenderer box2DDebugRenderer;
     private ArrayList<PointLight> pointLightsList = new ArrayList<PointLight>();
-    public B2lights() {
+    public B2lights(World world) {
+        this.world = world;
         pointLightsList = new ArrayList<PointLight>();
-        this.world = new World(new Vector2(0, 0), true);
         this.rayHandler = new RayHandler(this.world);
         rayHandler.setAmbientLight(.1f);
     //    box2DDebugRenderer = new Box2DDebugRenderer();

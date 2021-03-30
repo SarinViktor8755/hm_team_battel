@@ -97,7 +97,7 @@ public class MainCharacter extends Actor {
             this.maksTexture.add(mg.getAssetsManagerGame().get("character/character", TextureAtlas.class).findRegion("mask" + i));
         }
 
-        lith = new B2lights();
+        lith = new B2lights(mg.getWorld());
     }
 
     public Weapons getWeapons() {
@@ -149,9 +149,11 @@ public class MainCharacter extends Actor {
 
             if (live) {
                 //System.out.println("::::::::::::: "+ getCorrectionAngleBody());
-                TextureRegion texture = animationPers.getTextureBodyFromId(mg.getMainClient().getMyIdConnect());
+                //TextureRegion texture = animationPers.getTextureBodyFromId(mg.getMainClient().getMyIdConnect());
+                TextureRegion body = animationPers.getTextureBodyFromId(mg.getMainClient().getMyIdConnect());
+               // System.out.println(body);
                 batch.draw(animationPers.getTextureLegsFromId(mg.getMainClient().getMyIdConnect()), (int) (position.x - 125), (int) (position.y - 125), 125, 125, 250, 250, 1, 1, velocity.angle());
-                batch.draw(animationPers.getTextureBodyFromId(mg.getMainClient().getMyIdConnect()), (int) (position.x - 125), (int) (position.y - 125), 125, 125, 250, 250, 1.375f, 1.375f, cookAngle.angle() + getCorrectionAngleBody());
+                batch.draw(body, (int) (position.x - 125), (int) (position.y - 125), 125, 125, 250, 250, 1.375f, 1.375f, cookAngle.angle() + getCorrectionAngleBody(body));
             }
 
 
@@ -164,10 +166,28 @@ public class MainCharacter extends Actor {
         }
     }
 
-    private float getCorrectionAngleBody() {
+    private float getCorrectionAngleBody(TextureRegion texBody) {
         try {
-            float deltaA = 0;
-            return MathUtils.sinDeg(mg.getHero().getOtherPlayers().getTacktPlayer(mg.getMainClient().getMyIdConnect()) * 10) * 3;
+            float delta = 0;
+
+            String nameTexture = texBody.toString();
+
+            if (nameTexture.equals("hit2")) {
+                delta += 10;
+            } else if (nameTexture.equals("hit3")) {
+                delta += 20;
+            } else if (nameTexture.equals("hit4")) {
+                delta += 45;
+            } else
+            if (nameTexture.equals("hit2D")) {
+                delta += 10;
+            } else if (nameTexture.equals("hit3D")) {
+                delta += 20;
+            } else if (nameTexture.equals("hit4D")) {
+                delta += 45;
+            }
+
+            return delta + MathUtils.sinDeg(mg.getHero().getOtherPlayers().getTacktPlayer(mg.getMainClient().getMyIdConnect()) * 10) * 3;
         } catch (NullPointerException e) {
             return 0;
         }

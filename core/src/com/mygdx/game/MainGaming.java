@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FillViewport;
@@ -32,6 +33,8 @@ import com.mygdx.game.Service.OperationVector;
 
 
 public class MainGaming implements Screen {
+    private World world;
+
     private MainClient mainClient;
     private ZombiKiller zk;
     private Camera camera;
@@ -77,6 +80,7 @@ public class MainGaming implements Screen {
 
     @Override
     public void show() {
+        this.world = new World(new Vector2(0,0),true);
         this.startScreen = new StartScreen(zk);
         //zk.setScreen(startScreen);
         //        System.out.println("------------");
@@ -115,6 +119,10 @@ public class MainGaming implements Screen {
 
     public float getTimeInGame() {
         return timeInGame;
+    }
+
+    public World getWorld() {
+        return world;
     }
 
     @Override

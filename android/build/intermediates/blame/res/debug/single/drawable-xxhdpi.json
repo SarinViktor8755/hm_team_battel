@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_launcher.png",
+        "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "E:\\Android game\\Battlefront\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_launcher.png",
         "source": "E:\\Android game\\Battlefront\\android\\res\\drawable-xxhdpi\\ic_launcher.png"
     }

@@ -58,6 +58,8 @@ public class AnimationPers {
 
         for (int i = 0; i <= 5; i++) {
             kick_corpse.put(i + 4 + 100, legs.findRegion("hit" + i + "D"));
+
+           // System.out.println(kick_corpse);
         }
 
         for (int i = 0; i <= 3; i++) {
