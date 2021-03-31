@@ -4,8 +4,20 @@
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "F:\\game\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
+        "source": "F:\\game\\hm_team_battel\\android\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\game\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_foreground.png",
+        "source": "F:\\game\\hm_team_battel\\android\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\game\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "F:\\game\\hm_team_battel\\android\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",

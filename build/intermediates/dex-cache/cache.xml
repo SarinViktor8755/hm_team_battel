@@ -3,102 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\net.dermetfan.libgdx-utils\libgdx-utils-box2d\0.13.2\cb22af5b48e5dbe82a4f0704e5ddf360e1d1c9d6\libgdx-utils-box2d-0.13.2.jar"
+        jar="F:\game\hm_team_battel\core\build\libs\core-1.2.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.3"
-        sha1="cb22af5b48e5dbe82a4f0704e5ddf360e1d1c9d6">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\libgdx-utils-box2d-0.13.2_64a309a5aa55531774ee5f723df534a5bcd8239f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-box2d\1.9.8\6f0497b7958216464101adfb7bdc3a0f7b88d6d3\gdx-box2d-1.9.8.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="28.0.3"
-        sha1="6f0497b7958216464101adfb7bdc3a0f7b88d6d3">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\gdx-box2d-1.9.8_94dc98777c238823e3fb8e53c4ea959e886d520f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\net.dermetfan.libgdx-utils\libgdx-utils-box2d\0.13.2\cb22af5b48e5dbe82a4f0704e5ddf360e1d1c9d6\libgdx-utils-box2d-0.13.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="28.0.3"
-        sha1="cb22af5b48e5dbe82a4f0704e5ddf360e1d1c9d6">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\libgdx-utils-box2d-0.13.2_64a309a5aa55531774ee5f723df534a5bcd8239f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\com.badlogicgames.box2dlights\box2dlights\1.4\3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd\box2dlights-1.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.3"
-        sha1="3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\box2dlights-1.4_10182477d136aac2f5046f61768b261733660bce\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\com.badlogicgames.box2dlights\box2dlights\1.4\3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd\box2dlights-1.4.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="28.0.3"
-        sha1="3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\box2dlights-1.4_10182477d136aac2f5046f61768b261733660bce\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-box2d\1.9.8\6f0497b7958216464101adfb7bdc3a0f7b88d6d3\gdx-box2d-1.9.8.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.3"
-        sha1="6f0497b7958216464101adfb7bdc3a0f7b88d6d3">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\gdx-box2d-1.9.8_94dc98777c238823e3fb8e53c4ea959e886d520f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\net.dermetfan.libgdx-utils\libgdx-utils\0.13.2\62b7ab4f643c6b396292d1f2387c0099d28102ba\libgdx-utils-0.13.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.3"
-        sha1="62b7ab4f643c6b396292d1f2387c0099d28102ba">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\libgdx-utils-0.13.2_a159d3e749c99eb2a1a3232e7895da736297dd37\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\net.dermetfan.libgdx-utils\libgdx-utils\0.13.2\62b7ab4f643c6b396292d1f2387c0099d28102ba\libgdx-utils-0.13.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="28.0.3"
-        sha1="62b7ab4f643c6b396292d1f2387c0099d28102ba">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\libgdx-utils-0.13.2_a159d3e749c99eb2a1a3232e7895da736297dd37\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\com.badlogicgames.ashley\ashley\1.7.0\a7c4083c0a42027a3c03ba7ccecef6cbe1c5f0a4\ashley-1.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="28.0.3"
-        sha1="a7c4083c0a42027a3c03ba7ccecef6cbe1c5f0a4">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\ashley-1.7.0_9c41eb9a6208e5334cb1b7765edf8eec50aac6de\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\PortableGit\hm_team_battel\core\build\libs\core-1.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.3"
-        sha1="749ff5b9819df50e879efde485b28874e134c5e5">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\4\core-1.2_3837b51238ef29b89483bf7007a4016e69bdce06\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Виктор\.gradle\caches\modules-2\files-2.1\com.badlogicgames.ashley\ashley\1.7.0\a7c4083c0a42027a3c03ba7ccecef6cbe1c5f0a4\ashley-1.7.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.3"
-        sha1="a7c4083c0a42027a3c03ba7ccecef6cbe1c5f0a4">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\ashley-1.7.0_9c41eb9a6208e5334cb1b7765edf8eec50aac6de\classes.dex" />
+        sha1="bc8e78358fff9e6220a09af2b95a4123c4c6851e">
+        <dex dex="F:\game\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\4\core-1.2_855accc395e30f54bb87acf0b2778c1574f9cb54\classes.dex" />
     </item>
 
 </items>

@@ -50,7 +50,7 @@ public class B2lights{
       //  rayHandler1.useDiffuseLight(true);
 
   //      rayHandler1.setShadows(false);
-        rayHandler.setAmbientLight(.8f);
+        rayHandler.setAmbientLight(.4f);
         rayHandler.setShadows(false);
 
         rayHandlerHero.setAmbientLight(.2f);
