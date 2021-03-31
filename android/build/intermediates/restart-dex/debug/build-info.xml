@@ -6,22 +6,22 @@
     density="xhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1617157309428"
+    timestamp="1617164905518"
     token="-2260878016174830635"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="150" />
+        duration="3109" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="201" />
+        duration="350" />
     <task
         name="verifier"
-        duration="83" />
+        duration="136" />
 
     <artifact
         location="D:\PortableGit\hm_team_battel\android\build\outputs\apk\android-debug.apk"
@@ -29,7 +29,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1617157309428"
+        timestamp="1617164905518"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\PortableGit\hm_team_battel\android\build\outputs\apk\android-debug.apk"
