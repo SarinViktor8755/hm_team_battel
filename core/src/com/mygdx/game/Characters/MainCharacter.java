@@ -97,7 +97,7 @@ public class MainCharacter extends Actor {
             this.maksTexture.add(mg.getAssetsManagerGame().get("character/character", TextureAtlas.class).findRegion("mask" + i));
         }
 
-        lith = new B2lights(mg.getWorld());
+        lith = new B2lights(mg);
     }
 
     public Weapons getWeapons() {

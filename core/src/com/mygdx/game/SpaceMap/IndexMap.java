@@ -60,6 +60,10 @@ public class IndexMap {
 
     }
 
+    public HashMap<Integer, BoxObject> getTopQualityMap_Box() {
+        return topQualityMap_Box;
+    }
+
     public void renderFakePerspektiveLaier() {
         for (Map.Entry<Integer, FakePerspektiveObject> entry : fake_perspektive.entrySet()) {
             entry.getValue().renderObject();
@@ -328,5 +332,13 @@ public class IndexMap {
        // System.out.println(x + "   " + y);
         return new Vector2(x, y);
     }
+
+
+    public void getObjectFromLightis(){
+        for (Map.Entry<Integer, AverageObject> entry: this.averageLevelObjects.entrySet())
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+
+    }
+
 
 }

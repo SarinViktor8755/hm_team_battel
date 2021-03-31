@@ -1,9 +1,5 @@
 [
     {
-        "merged": "E:\\Android game\\Battlefront\\android\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher_background.xml",
-        "source": "E:\\Android game\\Battlefront\\android\\res\\drawable\\ic_launcher_background.xml"
-    },
-    {
         "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher_background.xml",
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\drawable\\ic_launcher_background.xml"
     }

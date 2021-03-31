@@ -156,6 +156,8 @@ public class MainGaming implements Screen {
         batch.setProjectionMatrix(camera.combined);
 
         gHero.draw(batch, 1);
+       // camera.update();
+
         getHero().getLith().renderLights(camera); // освещение
         batch.end();
 

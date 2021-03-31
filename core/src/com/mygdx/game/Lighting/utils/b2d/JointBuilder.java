@@ -41,8 +41,8 @@ public class JointBuilder {
         rDef.bodyB = bodyB;
         rDef.collideConnected = collide;
 
-        rDef.localAnchorA.set(anchorA.scl(1 / Constants.PPM));
-        rDef.localAnchorB.set(anchorB.scl(1 / Constants.PPM));
+        rDef.localAnchorA.set(anchorA.scl(1 ));
+        rDef.localAnchorB.set(anchorB.scl(1 ));
         return world.createJoint(rDef);
     }
 

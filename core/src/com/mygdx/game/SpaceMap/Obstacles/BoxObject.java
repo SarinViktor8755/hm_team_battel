@@ -54,6 +54,10 @@ public class BoxObject { // Боксовый обьект верхнего ур�
         return textureAtlas.findRegion(texture);
     }
 
+    public boolean isGorisont(){
+        return !corner;
+    }
+
     public void renderObject() {
         BoxObject e = this;
         float x, y;

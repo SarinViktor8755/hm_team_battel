@@ -18,19 +18,19 @@ public class BodyBuilder {
         else
             def.type = BodyDef.BodyType.DynamicBody;
 
-        def.position.set(x / PPM, y / PPM);
+        def.position.set(x , y);
         def.fixedRotation = fixedRotation;
         pBody = world.createBody(def);
         pBody.setUserData("wall");
 
         PolygonShape shape = new PolygonShape();
-        shape.setAsBox(width / 2 / PPM, height / 2 / PPM);
+        shape.setAsBox(width, height);
 
         FixtureDef fd = new FixtureDef();
         fd.shape = shape;
         fd.density = 1.0f;
-        fd.filter.categoryBits = Constants.BIT_WALL;
-        fd.filter.maskBits = Constants.BIT_PLAYER | Constants.BIT_WALL | Constants.BIT_SENSOR;
+//        fd.filter.categoryBits = Constants.BIT_WALL;
+//        fd.filter.maskBits = Constants.BIT_PLAYER | Constants.BIT_WALL | Constants.BIT_SENSOR;
         fd.filter.groupIndex = 0;
         pBody.createFixture(fd);
         shape.dispose();
@@ -41,7 +41,7 @@ public class BodyBuilder {
                                  boolean isStatic, boolean canRotate, short cBits, short mBits, short gIndex) {
         BodyDef bodyDef = new BodyDef();
         bodyDef.fixedRotation = canRotate;
-        bodyDef.position.set(x / PPM, y / PPM);
+        bodyDef.position.set(x , y );
 
         if(isStatic) {
             bodyDef.type = BodyDef.BodyType.StaticBody;
@@ -50,7 +50,7 @@ public class BodyBuilder {
         }
 
         PolygonShape shape = new PolygonShape();
-        shape.setAsBox(w / PPM / 2, h / PPM / 2);
+        shape.setAsBox(w  , h  );
 
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
@@ -66,7 +66,7 @@ public class BodyBuilder {
                                  boolean isStatic, boolean canRotate, short cBits, short mBits, short gIndex) {
         BodyDef bodyDef = new BodyDef();
         bodyDef.fixedRotation = canRotate;
-        bodyDef.position.set(x / PPM, y / PPM);
+        bodyDef.position.set(x , y );
 
         if(isStatic) {
             bodyDef.type = BodyDef.BodyType.StaticBody;
@@ -75,7 +75,7 @@ public class BodyBuilder {
         }
 
         CircleShape shape = new CircleShape();
-        shape.setRadius(r / PPM);
+        shape.setRadius(r );
 
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;

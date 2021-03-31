@@ -6,7 +6,10 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.World;
+import com.mygdx.game.MainGaming;
 
 import java.util.ArrayList;
 
@@ -20,54 +23,125 @@ public class B2lights{
 
     private PointLight pointLightHero;
     private DirectionalLight pointLightHeroDirectiona;
-
+    private ObFromLight object;
     private ConeLight coneLight;
     private RayHandler rayHandler;
+    private RayHandler rayHandler1;
+
+    private OrthographicCamera cameraLl;
+
+    private Box2DDebugRenderer b2dr;
 
  //   private Box2DDebugRenderer box2DDebugRenderer;
     private ArrayList<PointLight> pointLightsList = new ArrayList<PointLight>();
-    public B2lights(World world) {
-        this.world = world;
+    public B2lights(MainGaming mg) {
+
+        cameraLl = new OrthographicCamera(100,100);
+        this.world = mg.getWorld();
         pointLightsList = new ArrayList<PointLight>();
         this.rayHandler = new RayHandler(this.world);
-        rayHandler.setAmbientLight(.1f);
-    //    box2DDebugRenderer = new Box2DDebugRenderer();
+        this.rayHandler1 = new RayHandler(this.world);
+
+        pointLightHero = new PointLight(rayHandler, 20, new Color(0.75f, 0.75f, 0.5f, 0.75f), 2000, 0, 0); /// свитильник героя
+        pointLightHero.setSoftnessLength(.5f);
+////////////
 
         RayHandler.useDiffuseLight(true);
+        //rayHandler.setAmbientLight(.7f);
+      //  rayHandler1.useDiffuseLight(true);
+
+  //      rayHandler1.setShadows(false);
+        rayHandler.setAmbientLight(.5f);
+       // rayHandler.setAmbientLight(Color.BLUE);
+        rayHandler.setShadows(false);
+
+        rayHandler1.setAmbientLight(.5f);
+        //rayHandler1.setShadows(false);
 
 
+
+
+
+
+//        this.rayHandler.setBlur(true);
+//        this.rayHandler1.setBlur(true);
+
+//        this.rayHandler.setAmbientLight(1.7f);
+//        this.rayHandler1.setAmbientLight(1.7f);
+////////////
+        this.b2dr = new Box2DDebugRenderer();
+        object = new ObFromLight(this.world); // припятсвия
+        object.crearBodys(mg.getIndexMap().getTopQualityMap_Box());
 ////////////////////
         Color colorPoint;
         PointLight pl;
-        pointLightHero = new PointLight(rayHandler, 20, Color.WHITE, 1800, 0, 0);
+        //pointLightHero = new PointLight(rayHandler, 10, Color.WHITE, 1800, 0, 0); /// свитильник героя
+
+     //   pointLightHero.
+
+
         for (int i = 0; i < 5000; i += 1000) {
             for (int j = 0; j < 5000; j += 1000) {
                 if (MathUtils.randomBoolean()) colorPoint = Color.CHARTREUSE;
                 else if ((MathUtils.randomBoolean())) colorPoint = Color.RED;
                 else if ((MathUtils.randomBoolean())) colorPoint = Color.NAVY;
                 else colorPoint = Color.BROWN;
-
-                pl = new PointLight(rayHandler, 7, colorPoint, MathUtils.random(1200, 2000), j + MathUtils.random(-200, 200), i + MathUtils.random(-200, 200));
+                pl = new PointLight(rayHandler1, 7, colorPoint, MathUtils.random(1500, 2000), j + MathUtils.random(-200, 200), i + MathUtils.random(-200, 200));
+                pl.setIgnoreAttachedBody(true);
                 pointLightsList.add(pl);
-                //System.out.println("add");
+
             }
         }
 
 
     }
     public void upDateLights(float xHero, float yHero, float align) {
-
+        world.step(1 / 60f, 1, 1);
         pointLightHero.setPosition(xHero, yHero);
+//        pointLightHero.setXray(true);
+//        pointLightHero.setSoft(true);
 
-        for (PointLight p : pointLightsList) {
-            p.setPosition(p.getX() + MathUtils.random(-10, 10), p.getY() + MathUtils.random(-10, 10));
-            p.setPosition(MathUtils.clamp(p.getPosition().x, 0, 5000), MathUtils.clamp(p.getPosition().y, 0, 5000));
-        }
+
+//        for (PointLight p : pointLightsList) {
+//            p.setPosition(p.getX() + MathUtils.random(-10, 10), p.getY() + MathUtils.random(-10, 10));
+//            p.setPosition(MathUtils.clamp(p.getPosition().x, 0, 5000), MathUtils.clamp(p.getPosition().y, 0, 5000));
+//        }
+
+
     }
 
     public void renderLights(Camera camera) {
+//        rayHandler1.setCombinedMatrix((OrthographicCamera) camera);
+//        rayHandler1.updateAndRender();
+
         rayHandler.setCombinedMatrix((OrthographicCamera) camera);
         rayHandler.updateAndRender();
-        //  box2DDebugRenderer.render(world,camera.combined);
+
+       // pointLightHero.attachToBody();
+
+
+
+
+
+
+        //rayHandler.setAmbientLight(.5f);
+       // rayHandler.setShadows(false);
+//        rayHandler.setLightMapRendering(true);
+//       // rayHandler.diffuseBlendFunc.apply();
+//        pointLightHero.setIgnoreAttachedBody(true);
+//        pointLightHero.setStaticLight(true);
+
+
+//        pointLightHero.setSoftnessLength(MathUtils.random(1f));
+//        pointLightHero.setDistance(MathUtils.random(1500));
+//        pointLightHero.setSoftnessLength(MathUtils.random(1f));
+
+
+
+
+      //  cameraLl.view
+       // cameraLl.transform(camera.view);
+       // b2dr.render(world, camera.combined);
+        //box2DDebugRenderer.render(world,camera.combined);
     }
 }

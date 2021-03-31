@@ -16,6 +16,8 @@ import com.mygdx.game.MainGaming;
 public class Lighting {
     private float shadow;
 
+
+
     private TextureRegion nith;
     //    private TextureRegion lith;
     private MainGaming mainGaming;

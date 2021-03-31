@@ -1,11 +1,16 @@
 package com.mygdx.game.Lighting;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.mygdx.game.Lighting.utils.b2d.BodyBuilder;
+import com.mygdx.game.SpaceMap.Obstacles.BoxObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by 1 on 27.03.2021.
@@ -18,16 +23,26 @@ public class ObFromLight {
     public ObFromLight(World world) {
         this.world = world;
         this.bodyList = new ArrayList<Body>();
+
+
+        // BodyBuilder.createBox(world,2500,4000,200,450,true,true);
+
+
+//        for (int i = 0; i < 10; i++) {
+//            BodyBuilder.createBox(world,i * 5000,i *5000,200,450,true,true);
+//        }
+
+
     }
 
-    public void crearBody(){
-        Body boxGround;
-        for (int i = 0; i < 50; i++) {
-            boxGround = createBox(BodyDef.BodyType.StaticBody, 0.5F, 0.5F, 2);
-            boxGround.setTransform(i,0,0);
-            boxGround.getFixtureList().get(0).setUserData("bd");
+    public void crearBodys(HashMap<Integer, BoxObject> badis) {
 
-            bodyList.add(boxGround);
+        BoxObject obj;
+        for (Map.Entry<Integer, BoxObject> entry : badis.entrySet()) {
+            obj = entry.getValue();
+            if (obj.isGorisont())
+                BodyBuilder.createBox(world, obj.getPointLeftBottom().x + 100, obj.getPointLeftBottom().y + 450 / 2, 200 / 2, 450 / 2, true, true); else
+                BodyBuilder.createBox(world, obj.getPointLeftBottom().x + 450 / 2 , obj.getPointLeftBottom().y + 100, 450 / 2, 200 / 2, true, true);
 
 
         }
@@ -36,23 +51,4 @@ public class ObFromLight {
     }
 
 
-    /**
-     * Создание блока.
-     * @param type тип
-     * @param width ширина
-     * @param height высота
-     * @param density плотность
-     * @return
-     */
-    private Body createBox(BodyDef.BodyType type, float width, float height, float density) {
-        BodyDef def = new BodyDef();
-        def.type = type;
-        Body box = world.createBody(def);
-        PolygonShape poly = new PolygonShape();
-        poly.setAsBox(width, height);
-        box.createFixture(poly, density);
-        poly.dispose();
-
-        return box;
-    }
 }

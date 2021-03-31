@@ -7,8 +7,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.physics.box2d.Body;
 
 
-import static com.mygdx.game.Lighting.utils.Constants.PPM;
-
 public class LightBuilder {
 
     /* Point Lights */
@@ -20,7 +18,7 @@ public class LightBuilder {
         return pl;
     }
     public static PointLight createPointLight(RayHandler rayHandler, float x, float y, Color c, float dist) {
-        PointLight pl = new PointLight(rayHandler, 120, c, dist, x / PPM, y / PPM);
+        PointLight pl = new PointLight(rayHandler, 120, c, dist, x , y );
         pl.setSoftnessLength(0f);
         pl.setXray(false);
         return pl;
@@ -35,7 +33,7 @@ public class LightBuilder {
         return cl;
     }
     public static ConeLight createConeLight(RayHandler rayHandler, float x, float y, Color c, float dist, float dir, float cone) {
-        ConeLight cl = new ConeLight(rayHandler, 120, c, dist, x / PPM, y / PPM, dir, cone);
+        ConeLight cl = new ConeLight(rayHandler, 120, c, dist, x , y , dir, cone);
         cl.setSoftnessLength(0f);
         cl.setXray(false);
         return cl;
