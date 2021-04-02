@@ -65,6 +65,22 @@ public class OtherPlayers {
         }
     }
 
+    public float getAlphaFromId(int id){
+        try {
+            return getPlayerToID(id).getAlpha();
+        } catch (NullPointerException ex) {
+            return 0;
+        }
+    }
+
+
+    public void setAlphaFromId(int id, float apha){
+        try {
+            getPlayerToID(id).setAlpha(apha);
+        } catch (NullPointerException ex) {
+        }
+    }
+
     public int getYplayToId(int id) {
         return getPlayerToID(id).getY();
     }

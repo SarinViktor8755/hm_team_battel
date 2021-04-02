@@ -14,6 +14,7 @@ public class Player {
     private boolean viseble;
     private int weapons;
     Integer nom_mask;
+    private float alpha =1;
 
     public long getUpdateTime() {
         return updateTime;
@@ -45,6 +46,7 @@ public class Player {
         this.color = new Color(r, g, b, r + b + .5f);
         this.viseble = false;
         this.weapons = 1;
+        this.alpha = 1;
     }
 
     public int getWeapons() {
@@ -151,6 +153,15 @@ public class Player {
         this.rot = rot;
         this.updateTime = System.currentTimeMillis();
 
+    }
+
+
+    public float getAlpha() {
+        return alpha;
+    }
+
+    public void setAlpha(float alpha) {
+        this.alpha = alpha;
     }
 
     public AnimatonBody getAnimatonBody() {

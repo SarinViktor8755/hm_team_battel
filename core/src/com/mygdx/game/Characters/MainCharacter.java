@@ -151,7 +151,7 @@ public class MainCharacter extends Actor {
                 //System.out.println("::::::::::::: "+ getCorrectionAngleBody());
                 //TextureRegion texture = animationPers.getTextureBodyFromId(mg.getMainClient().getMyIdConnect());
                 TextureRegion body = animationPers.getTextureBodyFromId(mg.getMainClient().getMyIdConnect());
-               // System.out.println(body);
+                // System.out.println(body);
                 batch.draw(animationPers.getTextureLegsFromId(mg.getMainClient().getMyIdConnect()), (int) (position.x - 125), (int) (position.y - 125), 125, 125, 250, 250, 1, 1, velocity.angle());
                 batch.draw(body, (int) (position.x - 125), (int) (position.y - 125), 125, 125, 250, 250, 1.375f, 1.375f, cookAngle.angle() + getCorrectionAngleBody(body));
             }
@@ -178,8 +178,7 @@ public class MainCharacter extends Actor {
                 delta += 20;
             } else if (nameTexture.equals("hit4")) {
                 delta += 45;
-            } else
-            if (nameTexture.equals("hit2D")) {
+            } else if (nameTexture.equals("hit2D")) {
                 delta += 10;
             } else if (nameTexture.equals("hit3D")) {
                 delta += 20;
@@ -239,7 +238,6 @@ public class MainCharacter extends Actor {
 
         if (velocity.len2() > 250000)
             mg.getAudioEngine().addNewSoundStepToPleyerFromID(mg.getMainClient().getMyIdConnect());
-
 
     }
 
@@ -411,8 +409,8 @@ public class MainCharacter extends Actor {
             Iterator<Integer> iter = mg.getHero().getOtherPlayers().getPlayersList().keySet().iterator();
             while (iter.hasNext()) {
                 //mg.getBatch().setColor(1, 1, 1, 1);
-
                 Integer key = iter.next();
+
                 if (mg.getMainClient().getMyIdConnect() == key || (mg.getHero().getOtherPlayers().getXplayToId(key) == 0))
                     continue; //или это я же - иил у нас кент в загашнике на позиции - 0
                 try {
@@ -421,10 +419,12 @@ public class MainCharacter extends Actor {
 
                     int xz = mg.getHero().getOtherPlayers().getXplayToId(key);
                     int yz = mg.getHero().getOtherPlayers().getYplayToId(key);
+
                     if (xz == Integer.MIN_VALUE) continue;
-//                    try {
-                    // mg.getBatch().setBlendFunction();
-                    mg.getBatch().setColor(1, 1, 1, 1);
+
+                    updateViseblePlayer(xz, yz, key);
+                    System.out.println(getOtherPlayers().getAlphaFromId(key));
+                    mg.getBatch().setColor(1, 1, 1, getOtherPlayers().getAlphaFromId(key));
                     //      if (StaticService.determineTeamPlayer(key) == 1)
                     //        mg.getBatch().setColor(1, 0,0, .5f);
                     mg.getBatch().draw(animationPers.getTextureLegsFromId(key), (xz - 125), (yz - 125), 125, 125, 250, 250, 1, 1, mg.getHero().getOtherPlayers().getRotationBotsToId(key)); // nogi
@@ -447,6 +447,10 @@ public class MainCharacter extends Actor {
                                 125, 125,
                                 250, 250,
                                 1.375f, 1.375f, mg.getHero().getOtherPlayers().getRotationToId(key)); // mask
+
+                    //  mg.getBatch().draw(getLith().getTexture(),xz,yz,500,500); // mask
+
+
                 } catch (NullPointerException e) {
                     // System.out.println("rener other");
                     //e.printStackTrace();
@@ -461,6 +465,20 @@ public class MainCharacter extends Actor {
 
 
     }
+
+    public boolean updateViseblePlayer(float x, float y, int idP) {
+        if (getLith().isAtShadow(x, y)) {
+          //  System.out.println("+++");
+            getOtherPlayers().setAlphaFromId(idP, getOtherPlayers().getAlphaFromId(idP) + (Gdx.graphics.getDeltaTime() * 1000));
+        }else
+        getOtherPlayers().setAlphaFromId(idP, getOtherPlayers().getAlphaFromId(idP) - (Gdx.graphics.getDeltaTime() * 1000));
+
+        getOtherPlayers().setAlphaFromId(idP, MathUtils.clamp(getOtherPlayers().getAlphaFromId(idP), .3f, 1));
+        if (getOtherPlayers().getAlphaFromId(idP) == 0) return false;
+        else return true;
+
+    }
+
 
     public boolean makeHit() {
         if (!isLive()) return false;

@@ -41,19 +41,21 @@ public class ObFromLight {
         for (Map.Entry<Integer, BoxObject> entry : badis.entrySet()) {
             obj = entry.getValue();
             //System.out.println(obj);
-
             if(obj.getPointLeftBottom().y == 4800) continue;
             if(obj.getPointLeftBottom().x == 0) continue;
             if(obj.getPointLeftBottom().y == 0) continue;
             if(obj.getPointLeftBottom().x == 4790.0) continue;
 
-
             if (obj.isGorisont())
                 BodyBuilder.createBox(world, obj.getPointLeftBottom().x + 100 + 20, obj.getPointLeftBottom().y + 450 / 2, (200 / 2) - 20, 450 / 2, true, true); else
                 BodyBuilder.createBox(world, obj.getPointLeftBottom().x + 450 / 2 , obj.getPointLeftBottom().y + 100 + 20, 450 / 2, (200 / 2) - 20, true, true);
-
-
         }
+
+
+//        for (int i = 0; i < 500 ; i++) {
+//            BodyBuilder.createBox(world,500,i * 500,150,150,true,true);
+//        }
+
 
 
     }
