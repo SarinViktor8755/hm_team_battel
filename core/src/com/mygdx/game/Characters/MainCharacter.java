@@ -410,7 +410,6 @@ public class MainCharacter extends Actor {
             while (iter.hasNext()) {
                 //mg.getBatch().setColor(1, 1, 1, 1);
                 Integer key = iter.next();
-
                 if (mg.getMainClient().getMyIdConnect() == key || (mg.getHero().getOtherPlayers().getXplayToId(key) == 0))
                     continue; //или это я же - иил у нас кент в загашнике на позиции - 0
                 try {
@@ -422,8 +421,8 @@ public class MainCharacter extends Actor {
 
                     if (xz == Integer.MIN_VALUE) continue;
 
-                    updateViseblePlayer(xz, yz, key);
-                    System.out.println(getOtherPlayers().getAlphaFromId(key));
+                  //  updateViseblePlayer(xz, yz, key);
+                    //System.out.println(getOtherPlayers().getAlphaFromId(key));
                     mg.getBatch().setColor(1, 1, 1, getOtherPlayers().getAlphaFromId(key));
                     //      if (StaticService.determineTeamPlayer(key) == 1)
                     //        mg.getBatch().setColor(1, 0,0, .5f);
@@ -463,16 +462,20 @@ public class MainCharacter extends Actor {
         }
         mg.getBatch().setColor(1, 1, 1, 1);
 
-
+   //     System.out.println("-----------------------");
     }
 
     public boolean updateViseblePlayer(float x, float y, int idP) {
         if (getLith().isAtShadow(x, y)) {
-          //  System.out.println("+++");
-            getOtherPlayers().setAlphaFromId(idP, getOtherPlayers().getAlphaFromId(idP) + (Gdx.graphics.getDeltaTime() * 1000));
-        }else
-        getOtherPlayers().setAlphaFromId(idP, getOtherPlayers().getAlphaFromId(idP) - (Gdx.graphics.getDeltaTime() * 1000));
+           //System.out.println("+++");
+            //getOtherPlayers().setAlphaFromId(idP, getOtherPlayers().getAlphaFromId(idP) + (Gdx.graphics.getDeltaTime() * 1000));
+            getOtherPlayers().setAlphaFromId(idP, 1);
+        }else {
+            //System.out.println("---");
+           // getOtherPlayers().setAlphaFromId(idP, getOtherPlayers().getAlphaFromId(idP) - (Gdx.graphics.getDeltaTime() * 1000));
+            getOtherPlayers().setAlphaFromId(idP, 1);
 
+        }
         getOtherPlayers().setAlphaFromId(idP, MathUtils.clamp(getOtherPlayers().getAlphaFromId(idP), .3f, 1));
         if (getOtherPlayers().getAlphaFromId(idP) == 0) return false;
         else return true;

@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.World;
@@ -30,134 +31,88 @@ public class B2lights {
     private RayHandler rayHandler;
     private RayHandler rayHandlerHero;
 
-    private OrthographicCamera cameraLl;
-
-    private Box2DDebugRenderer b2dr;
-
-    //   private Box2DDebugRenderer box2DDebugRenderer;
     private ArrayList<PointLight> pointLightsList = new ArrayList<PointLight>();
 
     public B2lights(MainGaming mg) {
-
-        cameraLl = new OrthographicCamera(100, 100);
         this.world = mg.getWorld();
         pointLightsList = new ArrayList<PointLight>();
         RayHandler.useDiffuseLight(true);
-
-        //  this.rayHandler = new RayHandler(this.world);
         this.rayHandlerHero = new RayHandler(this.world);
-
-        pointLightHero = new PointLight(rayHandlerHero, 50, new Color(0.75f, 0.75f, 0.5f, 0.575f), 2000, 0, 0); /// свитильник героя
-
-////////////
-//        pointLightHero.setSoftnessLength(.2f);
-//        pointLightHero.setSoft(true);
-//        pointLightHero.setXray(false);
-//        pointLightHero.setStaticLight(true);
-
-
-        //   rayHandlerHero.setAmbientLight(.5f);
-
-        //     rayHandlerHero.setShadows(true);
-
-        rayHandlerHero.setAmbientLight(.5f);
-        //  rayHandlerHero.setLightMapRendering(true);
-//        rayHandlerHero.setShadows(false);
-
-        ///   rayHandlerHero.useDiffuseLight(true);
-
-
-        ShaderProgram shaderProgram = new ShaderProgram(Gdx.files.internal("shaders/default.vert"), Gdx.files.internal("shaders/default.frag"));
-
-        //    rayHandlerHero.setLightShader(shaderProgram);
-        rayHandlerHero.getLightMapTexture();
-
+       // pointLightHero = new PointLight(rayHandlerHero, 75, new Color(0.75f, 0.75f, 0.5f, 1.575f), 2000, 0, 0); /// свитильник героя
 
 ////////////
-        this.b2dr = new Box2DDebugRenderer();
+       // this.b2dr = new Box2DDebugRenderer();
         object = new ObFromLight(this.world); // припятсвия
         object.crearBodys(mg.getIndexMap().getTopQualityMap_Box());
 ////////////////////
-        Color colorPoint;
+      //  Color colorPoint;
         PointLight pl;
-        pointLightHero = new PointLight(rayHandlerHero, 25, Color.WHITE, 1800, 0, 0); /// свитильник героя
-
-        //   pointLightHero.
 
 
-        for (int i = 0; i < 5000; i += 1000) {
-            for (int j = 0; j < 5000; j += 1000) {
-                if (MathUtils.randomBoolean()) colorPoint = Color.CHARTREUSE;
-                else if ((MathUtils.randomBoolean())) colorPoint = Color.RED;
-                else if ((MathUtils.randomBoolean())) colorPoint = Color.NAVY;
-                else colorPoint = Color.BROWN;
-                pl = new PointLight(rayHandlerHero, 5, colorPoint, MathUtils.random(1500, 2000), j + MathUtils.random(-200, 200), i + MathUtils.random(-200, 200));
-                pl.setIgnoreAttachedBody(true);
-                pl.setColor(new Color(pl.getColor().r, pl.getColor().b, pl.getColor().g, .4f));
-                pointLightsList.add(pl);
+        for (Body obj : object.getBodyList()) {
+            pl = new PointLight(rayHandlerHero, 4, getColorFromPoint(), 2000, obj.getPosition().x, obj.getPosition().y);
 
-            }
+            System.out.println(pl.toString());
+
+            pl.setIgnoreAttachedBody(true);
+            pointLightsList.add(pl);
         }
 
 
+//        for (int i = 0; i < 5000; i += 250) {
+//            for (int j = 0; j < 5000; j += 250) {
+//
+///////////////
+//                pl = new PointLight(rayHandlerHero, 4, getColorFromPoint(), 850, j , i );
+//                pl.setIgnoreAttachedBody(true);
+//                pointLightsList.add(pl);
+///////////////
+//            }
+//        }
+////////////////////////////////////////////////////////////////////////////////////////////
+
+       // pointLightHero = new PointLight(rayHandlerHero, 25, Color.WHITE, 1800, 0, 0); /// свитильник героя
+        //////////////////////////
+        rayHandlerHero.setAmbientLight(1);
+        rayHandlerHero.setBlur(true);
+       // pointLightHero.setIgnoreAttachedBody(true);
     }
 
-    public void upDateLights(float xHero, float yHero, float align) {
-        world.step(1, 1, 1);
-        pointLightHero.setPosition(xHero, yHero);
 
-        //      pointLightHero.setXray(true);
-        //    pointLightHero.setSoft(true);
-
-
-        //    System.out.println(rayHandlerHero.pointAtShadow(100,100));
-
-        //    rayHandlerHero.setAmbientLight(MathUtils.random(.2f));
-        //   pointLightHero.setSoftnessLength(MathUtils.random(10f));
-        //    pointLightHero.setSoft(MathUtils.randomBoolean(.5f));
-
-        //  rayHandlerHero.setCulling(MathUtils.randomBoolean(.5f));
-
-
-        rayHandlerHero.setBlur(MathUtils.randomBoolean(.001f));
-
-
-        // rayHandlerHero.set(MathUtils.randomBoolean(.5f));
-        // System.out.println(pointLightHero.contains(100,100));
-        // pointLightHero.setDistance(MathUtils.random(500,2500));
-
-
-        for (PointLight p : pointLightsList) {
-            p.setPosition(p.getX() + MathUtils.random(-1, 1), p.getY() + MathUtils.random(-10, 10));
-            p.setPosition(MathUtils.clamp(p.getPosition().x, 0, 5000), MathUtils.clamp(p.getPosition().y, 0, 5000));
+    Color getColorFromPoint(){
+        Color colorPoint = new Color();
+        for (Body obj : object.getBodyList()) {
+            if (MathUtils.randomBoolean()) colorPoint = Color.CHARTREUSE;
+            else if ((MathUtils.randomBoolean())) colorPoint = Color.RED;
+            else if ((MathUtils.randomBoolean())) colorPoint = Color.NAVY;
+            else colorPoint = Color.BROWN;
         }
+        return colorPoint;
+    }
 
+
+
+    public void upDateLights(float xHero, float yHero, float align) {
+        world.step(1/60f, 1, 1);
+//        pointLightHero.setPosition(xHero, yHero);
 
     }
 
     public void renderLights(Camera camera) {
         rayHandlerHero.setCombinedMatrix((OrthographicCamera) camera);
         rayHandlerHero.updateAndRender();
-//
 //        rayHandler.setCombinedMatrix((OrthographicCamera) camera);
 //        rayHandler.updateAndRender();
-
         // pointLightHero.attachToBody();
-
-
         //rayHandler.setAmbientLight(.5f);
         // rayHandler.setShadows(false);
 //        rayHandler.setLightMapRendering(true);
 //       // rayHandler.diffuseBlendFunc.apply();
 //        pointLightHero.setIgnoreAttachedBody(true);
 //        pointLightHero.setStaticLight(true);
-
-
 //        pointLightHero.setSoftnessLength(MathUtils.random(1f));
 //        pointLightHero.setDistance(MathUtils.random(1500));
 //        pointLightHero.setSoftnessLength(MathUtils.random(1f));
-
-
         //  cameraLl.view
         // cameraLl.transform(camera.view);
         // b2dr.render(world, camera.combined);
@@ -166,7 +121,7 @@ public class B2lights {
 
 
     public boolean isAtShadow(float x, float y) {
-     //   System.out.println(rayHandlerHero.pointAtShadow(x, y));
+    System.out.println(rayHandlerHero.pointAtShadow(x, y));
         return rayHandlerHero.pointAtShadow(x, y);
     }
 

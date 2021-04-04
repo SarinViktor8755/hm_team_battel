@@ -335,8 +335,8 @@ public class IndexMap {
 
 
     public void getObjectFromLightis(){
-        for (Map.Entry<Integer, AverageObject> entry: this.averageLevelObjects.entrySet())
-            System.out.println(entry.getKey() + " = " + entry.getValue());
+        for (Map.Entry<Integer, AverageObject> entry: this.averageLevelObjects.entrySet());
+          //  System.out.println(entry.getKey() + " = " + entry.getValue());
 
     }
 

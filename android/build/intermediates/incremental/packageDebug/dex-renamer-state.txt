@@ -1,4 +1,4 @@
-#Wed Mar 31 20:37:57 ALMT 2021
+#Sat Apr 03 11:40:54 ALMT 2021
 file.9=F\:\\game\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_059fa6cc3c509825ce547833e75de57b2f0b5600\\classes.dex
 base.10=F\:\\game\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\libgdx-utils-0.13.2_53905f933dc1ab4677385eab1afbf5ea17d0280e
 file.8=F\:\\game\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\box2dlights-1.4_63c4381d761e9e0d4e0d63b7d74b8ac6db927920\\classes.dex
