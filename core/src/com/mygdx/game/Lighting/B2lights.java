@@ -77,10 +77,10 @@ public class B2lights {
         rayHandlerHero.setBlur(true);
       //  pointLightHero.setIgnoreAttachedBody(true);
 
-        System.out.println("-------");
-        System.out.println( object.getBodyList().size());
+//        System.out.println("-------");
+//        System.out.println( object.getBodyList().size());
         for (Body cars : object.getBodyList()) {
-            pl = new PointLight(rayHandlerHero, 5, getColorFromPoint(), 700, cars.getPosition().x, cars.getPosition().y);
+            pl = new PointLight(rayHandlerHero, 5, getColorFromPoint(), 1500, cars.getPosition().x, cars.getPosition().y);
             pointLightsList.add(pl);
             //  pl = new PointLight(rayHandlerHero, 15, getColorFromPoint(), 1600, j , i );
             //            pointLightsList.add(pl);
