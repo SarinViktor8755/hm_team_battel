@@ -33,57 +33,35 @@ public class B2lights {
 
     private ArrayList<PointLight> pointLightsList = new ArrayList<PointLight>();
 
+    private ConeLight coneLightHero;
+
+
     public B2lights(MainGaming mg) {
         this.world = mg.getWorld();
         pointLightsList = new ArrayList<PointLight>();
         RayHandler.useDiffuseLight(true);
         this.rayHandlerHero = new RayHandler(this.world);
-        // pointLightHero = new PointLight(rayHandlerHero, 75, new Color(0.75f, 0.75f, 0.5f, 1.575f), 2000, 0, 0); /// свитильник героя
-
-////////////
-        // this.b2dr = new Box2DDebugRenderer();
         object = new ObFromLight(this.world); // припятсвия
         object.crearBodys(mg.getIndexMap().getTopQualityMap_Box());
-////////////////////
-        //  Color colorPoint;
         PointLight pl;
-
-
-
-
 
         for (int i = 0; i < 5000; i += 1000) {
             for (int j = 0; j < 5000; j += 1000) {
-/////////////
-                pl = new PointLight(rayHandlerHero, 4, getColorFromPoint(), 1300, j , i );
+                pl = new PointLight(rayHandlerHero, 4, getColorFromPoint(), 1300, j, i);
+
                 pl.setIgnoreAttachedBody(false);
                 pointLightsList.add(pl);
-/////////////
             }
         }
-//////////////////////////////////////////////////////////////////////////////////////////
 
+        //pointLightHero = new PointLight(rayHandlerHero, 5, Color.WHITE, 1800, 0, 0); /// свитильник героя
+        coneLightHero = new ConeLight(rayHandlerHero,60,Color.WHITE,1500,0,0,90,60);
 
-//        for (Body obj : object.getBodyList()) {
-//            pl = new PointLight(rayHandlerHero, 5, getColorFromPoint(), 500, obj.getPosition().x + 600, obj.getPosition().y + 600);
-//            System.out.println(pl.toString());
-//            pointLightsList.add(pl);
-//        }
-
-
-        pointLightHero = new PointLight(rayHandlerHero, 25, Color.WHITE, 1800, 0, 0); /// свитильник героя
-        ////////////////////////
-        rayHandlerHero.setAmbientLight(1);
+       // rayHandlerHero.setAmbientLight(1);
         rayHandlerHero.setBlur(true);
-      //  pointLightHero.setIgnoreAttachedBody(true);
-
-//        System.out.println("-------");
-//        System.out.println( object.getBodyList().size());
         for (Body cars : object.getBodyList()) {
             pl = new PointLight(rayHandlerHero, 5, getColorFromPoint(), 1500, cars.getPosition().x, cars.getPosition().y);
-            pointLightsList.add(pl);
-            //  pl = new PointLight(rayHandlerHero, 15, getColorFromPoint(), 1600, j , i );
-            //            pointLightsList.add(pl);
+            pl.attachToBody(cars);
         }
     }
 
@@ -100,15 +78,18 @@ public class B2lights {
 
     public void upDateLights(float xHero, float yHero, float align) {
         world.step(1 / 60f, 1, 1);
-        pointLightHero.setPosition(xHero, yHero);
+        coneLightHero.setPosition(xHero,yHero);
+     //   coneLightHero.
+        coneLightHero.setDirection(align);
 
+
+
+      //  coneLightHero.
     }
 
     public void renderLights(Camera camera) {
         rayHandlerHero.setCombinedMatrix((OrthographicCamera) camera);
         rayHandlerHero.updateAndRender();
-
-//
 //        rayHandler.setCombinedMatrix((OrthographicCamera) camera);
 //        rayHandler.updateAndRender();
 ////         pointLightHero.attachToBody();
@@ -129,7 +110,6 @@ public class B2lights {
 
 
     public boolean isAtShadow(float x, float y) {
-//    System.out.println(rayHandlerHero.pointAtShadow(x, y));
         return rayHandlerHero.pointAtShadow(x, y);
     }
 
