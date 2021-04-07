@@ -26,9 +26,7 @@ public class B2lights {
     private World world;
 
     private PointLight pointLightHero;
-    //  private DirectionalLight pointLightHeroDirectiona;
     private ObFromLight object;
-    //  private RayHandler rayHandler;
     private RayHandler rayHandlerHero;
 
     private ArrayList<PointLight> pointLightsList = new ArrayList<PointLight>();
@@ -54,10 +52,10 @@ public class B2lights {
             }
         }
 
-        //pointLightHero = new PointLight(rayHandlerHero, 5, Color.WHITE, 1800, 0, 0); /// свитильник героя
-        coneLightHero = new ConeLight(rayHandlerHero,60,Color.WHITE,1500,0,0,90,60);
+        pointLightHero = new PointLight(rayHandlerHero, 7, Color.WHITE, 700, 0, 0); /// свитильник героя
+        coneLightHero = new ConeLight(rayHandlerHero,55,Color.WHITE,1500,0,0,90,60);
 
-       // rayHandlerHero.setAmbientLight(1);
+   
         rayHandlerHero.setBlur(true);
         for (Body cars : object.getBodyList()) {
             pl = new PointLight(rayHandlerHero, 5, getColorFromPoint(), 1500, cars.getPosition().x, cars.getPosition().y);
@@ -79,7 +77,8 @@ public class B2lights {
     public void upDateLights(float xHero, float yHero, float align) {
         world.step(1 / 60f, 1, 1);
         coneLightHero.setPosition(xHero,yHero);
-     //   coneLightHero.
+        pointLightHero.setPosition(xHero,yHero);
+
         coneLightHero.setDirection(align);
 
 
