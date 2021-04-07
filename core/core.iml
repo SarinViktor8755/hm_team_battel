@@ -41,5 +41,8 @@
     <orderEntry type="library" exported="" name="minlog-1.2" level="project" />
     <orderEntry type="library" exported="" name="objenesis-2.1" level="project" />
     <orderEntry type="library" exported="" name="core.core-1.2" level="project" />
+    <orderEntry type="library" exported="" name="core.core-1.2" level="project" />
+    <orderEntry type="library" exported="" name="core.core-1.2" level="project" />
+    <orderEntry type="library" exported="" name="core.core-1.2" level="project" />
   </component>
 </module>

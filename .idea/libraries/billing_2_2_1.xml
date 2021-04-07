@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="billing-2.2.1">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/9e23d4a9ab8d3fa51347ac8aeb204383724fec15/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/9e23d4a9ab8d3fa51347ac8aeb204383724fec15/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/3daf29e95a15fe4142c9659ab213236b907f7609/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/3daf29e95a15fe4142c9659ab213236b907f7609/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

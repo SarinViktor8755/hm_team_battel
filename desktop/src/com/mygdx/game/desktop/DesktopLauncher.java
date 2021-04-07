@@ -9,8 +9,8 @@ public class DesktopLauncher implements AdAds {
     public static void main(String[] arg) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
         config.title = "HotLine Team Battle";
-        config.width = ZombiKiller.WHIDE_SCREEN /2;
-        config.height = ZombiKiller.HIDE_SCREEN /2  ;
+        config.width = ZombiKiller.WHIDE_SCREEN ;
+        config.height = ZombiKiller.HIDE_SCREEN ;
 
         new LwjglApplication(new ZombiKiller(3), config);
 

@@ -52,7 +52,7 @@ public class B2lights {
             }
         }
 
-        pointLightHero = new PointLight(rayHandlerHero, 7, Color.WHITE, 700, 0, 0); /// свитильник героя
+        pointLightHero = new PointLight(rayHandlerHero, 6, Color.WHITE, 700, 0, 0); /// свитильник героя
         coneLightHero = new ConeLight(rayHandlerHero,55,Color.WHITE,1500,0,0,90,60);
 
    
@@ -69,6 +69,9 @@ public class B2lights {
         if (MathUtils.randomBoolean(.3f)) colorPoint = Color.CHARTREUSE;
         else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.RED;
         else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.NAVY;
+        else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.BLUE;
+        else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.OLIVE;
+        else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.YELLOW;
         else colorPoint = Color.BROWN;
         return colorPoint;
     }
