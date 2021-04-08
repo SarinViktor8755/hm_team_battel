@@ -308,6 +308,7 @@ public class MainCharacter extends Actor {
     public void attackPistol(int id) {  // добавленеи анимации удара + отправка на сервер сообщение о нанесение удара атака
         int x = (int) (position.x + cookAngle.x * 20);  // начальное положение выстрела
         int y = (int) (position.y + cookAngle.y * 20);
+        mg.getHero().getLith().startBulletFlash(position.x + cookAngle.x * 20,position.y + cookAngle.x * 20); ///вспышка
         int cookAngle = (int) (getCookAngle().angle());  // направление
         mg.getMainClient().getOutStock().addStockInQuery(new RequestStock(// отправить на сервер
                 mg.getMainClient().getAndUpdateRealTime(), 2,
@@ -332,6 +333,7 @@ public class MainCharacter extends Actor {
         getOtherPlayers().getPlayerToID(id).getAnimatonBody().addAnimationAttackShotgun();// добавляем анимацию
         int x = (int) (position.x + cookAngle.x * 20);  // начальное положение выстрела
         int y = (int) (position.y + cookAngle.y * 20);
+        mg.getHero().getLith().startBulletFlash(position.x + cookAngle.x * 20,position.y + cookAngle.x * 20); ///вспышка
 
         int cookAngle = (int) (getCookAngle().angle());  // направление
 

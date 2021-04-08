@@ -185,7 +185,7 @@ public class AnimationPers {
         if (idAnimation == -1) {
             return flipTextIvertY(kick_corpse.get(5 + dk));
         }
-        return kick_corpse.get(5);
+        return kick_corpse.get(5 + dk);
     }
 
     private TextureRegion getAnimationBodyFromPistols(int idAnimation) {

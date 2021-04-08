@@ -19,8 +19,6 @@ public class Flash {
     public void render(SpriteBatch spriteBatch, TextureRegion textureRegion){
         spriteBatch.setColor(1,1,1,1);
         spriteBatch.draw(textureRegion,position.x,position.y,1,1,textureRegion.getRegionWidth(),textureRegion.getRegionWidth(),1,1,0);
-
-
     }
 
     public void update(float dt){

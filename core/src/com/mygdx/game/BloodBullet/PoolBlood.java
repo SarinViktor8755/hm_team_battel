@@ -416,7 +416,6 @@ public class PoolBlood {
         b.setStepX(direction.cpy().nor().x);
         b.setStepY(direction.cpy().nor().y);
         b.setPoition(startX, startY);
-        mainGaming.getHero().getLith().startBulletFlash(startX, startY); ///вспышка
         return b;
     }
 
@@ -453,6 +452,7 @@ public class PoolBlood {
                 spriteBatch.draw(textureRegions.get(62), b.getPoition().x, b.getPoition().y, 24, 24);
                 for (int i = 0; i < b.getNumberSteps(); i++) {
                     if (StaticService.selectWithProbability(50)) continue;
+
                     spriteBatch.draw(textureRegions.get(62), b.getPoition().x - b.getStepX() * i * 15 + MathUtils.random(-5, 5), b.getPoition().y - b.getStepY() * i * 15 + MathUtils.random(-5, 5), 10, 10);
                 }
                 spriteBatch.setColor(1, 1, 1, 1);
@@ -461,6 +461,7 @@ public class PoolBlood {
 
     public void addBulletOtherPlayerPistol(int id) {
         Vector2 p = new Vector2(mainGaming.getHero().getOtherPlayers().getXplayToId(id), mainGaming.getHero().getOtherPlayers().getYplayToId(id));
+        mainGaming.getHero().getLith().startBulletFlash(p.x,p.y); ///вспышка
         Vector2 cook = new Vector2(10, 10);
         cook.setAngle(mainGaming.getHero().getOtherPlayers().getRotationToId(id));
         Vector2 delta = new Vector2(cook);
@@ -472,11 +473,13 @@ public class PoolBlood {
     public void addBulletOtherPlayerShootGun(int id) {
         Vector2 p = new Vector2(mainGaming.getHero().getOtherPlayers().getXplayToId(id), mainGaming.getHero().getOtherPlayers().getYplayToId(id));
         Vector2 cook = new Vector2(10, 10);
+        mainGaming.getHero().getLith().startBulletFlash(p.x,p.y); ///вспышка
         cook.setAngle(mainGaming.getHero().getOtherPlayers().getRotationToId(id));
         Vector2 delta = new Vector2(cook);
         for (int i = -10; i < 10; i += 4) {
             mainGaming.getHero().getPoolBlood().getBullet(cook.cpy().rotate(i), (int) (p.x - delta.x), (int) (p.y - delta.y));
         }
+
 
     }
     /////////////////////

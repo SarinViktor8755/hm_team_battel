@@ -53,9 +53,7 @@ public class B2lights {
 
         pointLightHero = new PointLight(rayHandlerHero, 6, Color.WHITE, 700, 0, 0); /// свитильник героя
         coneLightHero = new ConeLight(rayHandlerHero, 55, Color.WHITE, 1500, 0, 0, 90, 60);
-
-
-        //  bullet = new PointLight(rayHandlerHero, 12, Color.YELLOW, 2000, 0, 0); /// gekz
+//
         buletFlash = new BuletFlash(rayHandlerHero);
 
 
@@ -92,22 +90,6 @@ public class B2lights {
     public void renderLights(Camera camera) {
         rayHandlerHero.setCombinedMatrix((OrthographicCamera) camera);
         rayHandlerHero.updateAndRender();
-//        rayHandler.setCombinedMatrix((OrthographicCamera) camera);
-//        rayHandler.updateAndRender();
-////         pointLightHero.attachToBody();
-//        rayHandler.setAmbientLight(.5f);
-//         rayHandler.setShadows(false);
-//        rayHandler.setLightMapRendering(true);
-        // rayHandler.diffuseBlendFunc.apply();
-//        pointLightHero.setIgnoreAttachedBody(true);
-//        pointLightHero.setStaticLight(true);
-//        pointLightHero.setSoftnessLength(MathUtils.random(1f));
-//        pointLightHero.setDistance(MathUtils.random(1500));
-//        pointLightHero.setSoftnessLength(MathUtils.random(1f));
-//          cameraLl.view
-//         cameraLl.transform(camera.view);
-//         b2dr.render(world, camera.combined);
-//        box2DDebugRenderer.render(world,camera.combined);
     }
 
 
