@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 
@@ -116,6 +117,8 @@ public class MainCharacter extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
 
+       // if(MathUtils.randomBoolean(.1f))lith.startBulletFlash(this.position.x + MathUtils.random(1000),this.position.y + MathUtils.random(1000));
+
         /////
 
         //System.out.println(position.x+" :: "+ position.y);
@@ -133,6 +136,8 @@ public class MainCharacter extends Actor {
 //        System.out.println(mg.getHero().weapons.getTemp_weapon());
 //        System.out.println("__________________");
         try {
+
+
 
             mg.getIndexMap().renderBottomLevel();
             mg.getBatch().setColor(1, 1, 1, .6f);
@@ -421,25 +426,16 @@ public class MainCharacter extends Actor {
 
                     if (xz == Integer.MIN_VALUE) continue;
 
-                  //  updateViseblePlayer(xz, yz, key);
-                    //System.out.println(getOtherPlayers().getAlphaFromId(key));
                     mg.getBatch().setColor(1, 1, 1, getOtherPlayers().getAlphaFromId(key));
-                    //      if (StaticService.determineTeamPlayer(key) == 1)
-                    //        mg.getBatch().setColor(1, 0,0, .5f);
+
                     mg.getBatch().draw(animationPers.getTextureLegsFromId(key), (xz - 125), (yz - 125), 125, 125, 250, 250, 1, 1, mg.getHero().getOtherPlayers().getRotationBotsToId(key)); // nogi
-                    // mg.getBatch().draw(animationPers.getTextureBodyFromId(key), (xz - 125), (yz - 125), 125, 125, 250, 250, 1.375f, 1.375f, mg.getHero().getOtherPlayers().getRotationToId(key)); // telo
+
                     mg.getBatch().draw(animationPers.getTextureBodyFromId(key),
                             (xz - 125), (yz - 125),
                             125, 125,
                             250, 250,
                             1.375f, 1.375f,
                             mg.getHero().getOtherPlayers().getRotationToId(key)); // telo
-                    //                mg.getBatch().setColor(1, 1,1, 1);
-                    //  mg.getBatch().setColor(getOtherPlayers().getPlayerToID(key).getColor());
-                    //if(viseble)mg.getBatch().setColor(mg.getHero().getOtherPlayers().getColorPfromId(key));
-                    // mg.getBatch().draw(animationPers.getTextureVestFromId(key, getOtherPlayers().getPlayerToID(key).getWeapons()), (xz - 125), (yz - 125), 125, 125, 250, 250, 1.375f, 1.375f, mg.getHero().getOtherPlayers().getRotationToId(key));   // gelet
-                    // mg.getBatch().setColor(1, 1, 1, 1);
-
                     if (key < 0)
                         mg.getBatch().draw(maksTexture.get(mg.getHero().getOtherPlayers().getMaskToID(key - 1)),
                                 (xz - 125), (yz - 125),
@@ -447,7 +443,7 @@ public class MainCharacter extends Actor {
                                 250, 250,
                                 1.375f, 1.375f, mg.getHero().getOtherPlayers().getRotationToId(key)); // mask
 
-                    //  mg.getBatch().draw(getLith().getTexture(),xz,yz,500,500); // mask
+
 
 
                 } catch (NullPointerException e) {
@@ -461,8 +457,6 @@ public class MainCharacter extends Actor {
             //exception.printStackTrace();
         }
         mg.getBatch().setColor(1, 1, 1, 1);
-
-   //     System.out.println("-----------------------");
     }
 
     public boolean updateViseblePlayer(float x, float y, int idP) {
@@ -479,7 +473,6 @@ public class MainCharacter extends Actor {
         getOtherPlayers().setAlphaFromId(idP, MathUtils.clamp(getOtherPlayers().getAlphaFromId(idP), .3f, 1));
         if (getOtherPlayers().getAlphaFromId(idP) == 0) return false;
         else return true;
-
     }
 
 

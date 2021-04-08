@@ -1,17 +1,15 @@
 package com.mygdx.game.Lighting;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Vector2;
+
 import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.Filter;
+
 import com.badlogic.gdx.physics.box2d.World;
 import com.mygdx.game.MainGaming;
 
@@ -33,6 +31,7 @@ public class B2lights {
 
     private ConeLight coneLightHero;
 
+    private BuletFlash buletFlash;
 
     public B2lights(MainGaming mg) {
         this.world = mg.getWorld();
@@ -53,10 +52,13 @@ public class B2lights {
         }
 
         pointLightHero = new PointLight(rayHandlerHero, 6, Color.WHITE, 700, 0, 0); /// свитильник героя
-        coneLightHero = new ConeLight(rayHandlerHero,55,Color.WHITE,1500,0,0,90,60);
+        coneLightHero = new ConeLight(rayHandlerHero, 55, Color.WHITE, 1500, 0, 0, 90, 60);
 
-   
-        rayHandlerHero.setBlur(true);
+
+        //  bullet = new PointLight(rayHandlerHero, 12, Color.YELLOW, 2000, 0, 0); /// gekz
+        buletFlash = new BuletFlash(rayHandlerHero);
+
+
         for (Body cars : object.getBodyList()) {
             pl = new PointLight(rayHandlerHero, 5, getColorFromPoint(), 1500, cars.getPosition().x, cars.getPosition().y);
             pl.attachToBody(cars);
@@ -79,14 +81,12 @@ public class B2lights {
 
     public void upDateLights(float xHero, float yHero, float align) {
         world.step(1 / 60f, 1, 1);
-        coneLightHero.setPosition(xHero,yHero);
-        pointLightHero.setPosition(xHero,yHero);
-
+        coneLightHero.setPosition(xHero, yHero);
+        pointLightHero.setPosition(xHero, yHero);
         coneLightHero.setDirection(align);
+        buletFlash.upDate();
 
 
-
-      //  coneLightHero.
     }
 
     public void renderLights(Camera camera) {
@@ -118,4 +118,10 @@ public class B2lights {
     public Texture getTexture() {
         return rayHandlerHero.getLightMapTexture();
     }
+
+
+    public void startBulletFlash(float x, float y) {
+        buletFlash.newFlesh(x, y);
+    }
+
 }

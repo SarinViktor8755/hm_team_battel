@@ -143,6 +143,7 @@ public class PoolBlood {
         te.texture = textureRegion;
         te.score = score;
         te.transparent = transparent;
+
         return te;
     }
 
@@ -382,9 +383,7 @@ public class PoolBlood {
                 blood.x = (int) OperationVector.get_Setter_Temp_vector().x;
                 blood.y = (int) OperationVector.get_Setter_Temp_vector().y;
             } else continue;
-
         }
-
         updaeteAd(deltaTime); // это упдате Ад
 
     }
@@ -417,6 +416,7 @@ public class PoolBlood {
         b.setStepX(direction.cpy().nor().x);
         b.setStepY(direction.cpy().nor().y);
         b.setPoition(startX, startY);
+        mainGaming.getHero().getLith().startBulletFlash(startX, startY); ///вспышка
         return b;
     }
 
