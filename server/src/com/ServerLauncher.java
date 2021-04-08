@@ -1,6 +1,7 @@
 package com;
 
 import java.io.IOException;
+import java.util.UUID;
 
 /**
  * Created by 1 on 23.09.2019.
@@ -10,6 +11,11 @@ public class ServerLauncher {
     static GameServer server;
 
     public static void main(String[] args) throws IOException {
+//        UUID uuid = UUID.randomUUID();
+//        String uuidAsString = uuid.toString();
+//        System.out.println("Your UUID is: " + uuidAsString);
+
+
            // FileLog.saveToFileNewThred("StartServer<br>");
             server = new GameServer(args,new ServerLauncher());
 

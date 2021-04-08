@@ -3,12 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="F:\game\hm_team_battel\core\build\libs\core-1.2.jar"
+        jar="D:\PortableGit\hm_team_battel\core\build\libs\core-1.2.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.3"
-        sha1="0b2c78a322176e7c29f14a762dfe307765b29f46">
-        <dex dex="F:\game\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\4\core-1.2_855accc395e30f54bb87acf0b2778c1574f9cb54\classes.dex" />
+        sha1="4cfa0090b838d8b65247b0760886f8c5fecd4deb">
+        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\4\core-1.2_3837b51238ef29b89483bf7007a4016e69bdce06\classes.dex" />
     </item>
 
 </items>
