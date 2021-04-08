@@ -3,6 +3,7 @@ package com;
 import com.Bot.IndexBot;
 import com.Network.PleyerPosition;
 import com.Network.rc;
+import com.RatingSystem.Index;
 import com.SteckApi.CalculationСontact;
 import com.SteckApi.RouteResponseRequests;
 import com.badlogic.gdx.math.MathUtils;
@@ -32,6 +33,7 @@ public class GameServer extends Listener {
     public int realTime;
     public RouteResponseRequests responseRequests;
     public CalculationСontact calculationСontact;
+    public Index raitingSystem;
 
     private CommandLogic commandLogic;
 
@@ -105,6 +107,7 @@ public class GameServer extends Listener {
                 e.printStackTrace();
             }
             snapShots = new SnapShots(this);
+            this.raitingSystem = new Index();
             server = new Server();
             responseRequests = new RouteResponseRequests(this);
             calculationСontact = new CalculationСontact(this);
@@ -117,6 +120,9 @@ public class GameServer extends Listener {
             this.args = args;
             this.serverLauncher = serverLauncher;
             this.commandLogic = new CommandLogic();
+
+            raitingSystem.fillRatingSystem();
+            System.out.println(raitingSystem);
 
 
             server.addListener(new Listener() {
