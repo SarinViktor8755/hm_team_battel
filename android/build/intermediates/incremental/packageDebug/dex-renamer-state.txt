@@ -1,4 +1,4 @@
-#Thu Apr 08 11:44:07 GMT+06:00 2021
+#Fri Apr 09 11:10:29 GMT+06:00 2021
 file.9=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gdx-1.9.8_e49da5bbf7489c6509be602c8242eb83c237abf6\\classes.dex
 base.10=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_3b6f5ac75f1beaa60c7f730f1f5f174c049daa79
 file.8=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\minlog-1.2_7ea47e8f06ee8bc9b644191c2b2e6c72aa47b8a5\\classes.dex

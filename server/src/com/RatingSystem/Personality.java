@@ -11,7 +11,13 @@ public class Personality {
     private int deathCounter;
 
 
+    public String getUuid() {
+        return uuid;
+    }
 
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
     public int getScore() {
         return score;
@@ -47,7 +53,7 @@ public class Personality {
 
     @Override
     public String toString() {
-        return "Personality{" +
+        return "{" +
                 "uuid='" + uuid + '\'' +
                 ", score=" + score +
                 ", gameCounter=" + gameCounter +

@@ -11,13 +11,20 @@ import java.util.Comparator;
 
 public class Index {
     private ArrayList<Personality> raitingList = new ArrayList<>();
+    private FileReaderWriter fileReaderWriter;
 
+    public Index() {
+        this.fileReaderWriter = new FileReaderWriter();
+        this.raitingList = new ArrayList<>();
+    }
 
     public void fillRatingSystem() {
 
         for (int i = 0; i < MathUtils.random(40); i++) {
             this.raitingList.add(new Personality("Vity", MathUtils.random(600), MathUtils.random(600), MathUtils.random(600)));
         }
+
+        fileReaderWriter.saveFromFile(raitingList);
 
     }
 

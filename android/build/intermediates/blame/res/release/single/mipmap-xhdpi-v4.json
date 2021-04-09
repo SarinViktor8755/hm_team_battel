@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\ic_launcher_round.png",
+        "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\ic_launcher_foreground.png",
+        "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    }
+]

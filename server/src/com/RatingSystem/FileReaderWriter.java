@@ -1,5 +1,11 @@
 package com.RatingSystem;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
@@ -7,13 +13,43 @@ import java.util.ArrayList;
  */
 
 public class FileReaderWriter {
-    static void readFromFile(ArrayList<Personality> rl){
-        
+    private String urlFile = "raytingDate.txt";
+
+    public void readFromFile(ArrayList<Personality> rl) {
+
 
     }
 
-    static void saveFromFile(ArrayList<Personality> rl){
+    public void saveFromFile(ArrayList<Personality> rl) {
+        FileWriter writer = null;
+        try {
+            writer = new FileWriter(urlFile);
 
+        for (Personality pers : rl) {
+            writer.write(rl.toString()+ pers.getUuid() + System.getProperty("line.separator"));
+            writer.close();
+        }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//
+//        try {
+//            FileWriter fileWriter = null;
+//            fileWriter = new FileWriter("raytingDate.txt");
+//
+//            PrintWriter printWriter = new PrintWriter(fileWriter);
+//            printWriter.print("Some String");
+//            printWriter.print("Some String1111 /n asdad a");
+//            //printWriter.printf("Product name is %s and its price is %d $", "iPhone", 1000);
+//            printWriter.close();
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        //String read = Files.readAllLines(path).get(0);
+        // assertEquals(str, read);
 
 
     }

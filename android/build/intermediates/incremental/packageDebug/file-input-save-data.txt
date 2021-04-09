@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Apr 08 11:44:08 GMT+06:00 2021
+#Fri Apr 09 11:10:39 GMT+06:00 2021
 122.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\kryonet-2.22.0-RC1_494e2a515ea0601d2b1a30d92ee766967ce6226e\\classes.dex
 60.set=DEX
 129.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\assets\\debug\\map\\obstacles.png
@@ -11,7 +11,7 @@
 98.set=ASSET
 1.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gdx-freetype-1.9.8_b2ff1ff3045baa70dc5317207fc2b07c5fcca15f\\classes.dex
 13.base=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\resources-debug.ap_
-45.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xxxhdpi-v4\\ic_launcher.png
+45.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-hdpi-v4\\ic_launcher_foreground.png
 60.base=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\jsonbeans-0.7_ca43ff8bef19d951e5968e5e11c67c6b30753ea6
 92.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\ashley-1.7.0_9c41eb9a6208e5334cb1b7765edf8eec50aac6de\\classes.dex
 8.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\folders\\2000\\1f\\main\\lib\\arm64-v8a\\libgdx-freetype.so
@@ -68,7 +68,7 @@
 96.set=JAVA_RESOURCE
 88.set=JAVA_RESOURCE
 0.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_c6c1610d957cd71cc4e3186fcc77f55d6392e68c\\classes.dex
-44.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-hdpi-v4\\ic_launcher_foreground.png
+44.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xxxhdpi-v4\\ic_launcher.png
 12.base=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 7.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\assets\\debug\\audio\\ricochet.ogg
 91.file=D\:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\assets\\debug\\audio\\hit1.ogg

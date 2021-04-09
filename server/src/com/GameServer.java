@@ -125,6 +125,7 @@ public class GameServer extends Listener {
             System.out.println(raitingSystem);
 
 
+
             server.addListener(new Listener() {
                                    public void received(Connection c, Object object) { // ответы
                                        if (object instanceof Network.StockMess) {  // получение из стока сообщения - и отпрвка ответа
