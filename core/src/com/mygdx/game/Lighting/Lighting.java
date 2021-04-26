@@ -32,6 +32,7 @@ public class Lighting {
         maxFreme = 4;
         tempVector = new Vector2();
 
+
     }
 
     public void updateLighting(float delta) {

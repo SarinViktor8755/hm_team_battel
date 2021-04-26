@@ -28,6 +28,7 @@ import com.mygdx.game.Ip.AndroidInputProcessorGamePley;
 import com.mygdx.game.Ip.DesktopInputProcessorGamePley;
 import com.mygdx.game.Ip.InputProc;
 import com.mygdx.game.LoadingScreen.StartScreen;
+import com.mygdx.game.Service.RaitingService;
 import com.mygdx.game.SpaceMap.IndexMap;
 import com.mygdx.game.Service.OperationVector;
 
@@ -157,7 +158,7 @@ public class MainGaming implements Screen {
 
         gHero.draw(batch, 1);
        // camera.update();
-
+        RaitingService.generateTokken();
         getHero().getLith().renderLights(camera); // освещение
         batch.end();
 

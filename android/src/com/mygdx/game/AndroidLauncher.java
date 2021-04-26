@@ -22,6 +22,7 @@ public class AndroidLauncher extends AndroidApplication implements AdAds {
         config.useAccelerometer = false;
         config.useCompass = false;
         config.useGyroscope = false;
+       // initFlavor(ZombiKiller);
         initialize(new ZombiKiller(1,this), config);
         ////////////////////////////////////////////////////
            MobileAds.initialize(this, "ca-app-pub-3062739183422189~2459416261");
@@ -36,9 +37,9 @@ public class AndroidLauncher extends AndroidApplication implements AdAds {
             public void onAdClosed() {
                 mInterstitialAd.loadAd(new AdRequest.Builder().build());
             }
-
         });
-        ////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////oplata
+
     }
 
     @Override

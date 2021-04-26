@@ -1,5 +1,6 @@
 package com.mygdx.game.Lighting;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -34,6 +35,7 @@ public class B2lights {
     private BuletFlash buletFlash;
 
     public B2lights(MainGaming mg) {
+       //Gdx.app.log("Gdx version", com.badlogic.gdx.Version.VERSION);
         this.world = mg.getWorld();
         pointLightsList = new ArrayList<PointLight>();
         RayHandler.useDiffuseLight(true);
@@ -44,33 +46,35 @@ public class B2lights {
 
         for (int i = 0; i < 5000; i += 1000) {
             for (int j = 0; j < 5000; j += 1000) {
-                pl = new PointLight(rayHandlerHero, 4, getColorFromPoint(), 1300, j, i);
-
+                pl = new PointLight(rayHandlerHero, 8, getColorFromPoint(), 1300, j, i);
                 pl.setIgnoreAttachedBody(false);
                 pointLightsList.add(pl);
             }
         }
 
-        pointLightHero = new PointLight(rayHandlerHero, 6, Color.WHITE, 700, 0, 0); /// свитильник героя
-        coneLightHero = new ConeLight(rayHandlerHero, 55, Color.WHITE, 1500, 0, 0, 90, 60);
+        pointLightHero = new PointLight(rayHandlerHero, 4, Color.WHITE, 700, 0, 0); /// свитильник героя
+        coneLightHero = new ConeLight(rayHandlerHero, 65, Color.WHITE, 1500, 0, 0, 90, 60);
 //
         buletFlash = new BuletFlash(rayHandlerHero);
 
 
         for (Body cars : object.getBodyList()) {
-            pl = new PointLight(rayHandlerHero, 5, getColorFromPoint(), 1500, cars.getPosition().x, cars.getPosition().y);
+            pl = new PointLight(rayHandlerHero, 8, getColorFromPoint(), 1500, cars.getPosition().x, cars.getPosition().y);
             pl.attachToBody(cars);
         }
+
+        rayHandlerHero.setAmbientLight(.7f);
+       // rayHandlerHero.setShadows();
     }
 
 
     Color getColorFromPoint() {
         Color colorPoint;
-        if (MathUtils.randomBoolean(.3f)) colorPoint = Color.CHARTREUSE;
-        else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.RED;
-        else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.NAVY;
-        else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.BLUE;
-        else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.OLIVE;
+        if (MathUtils.randomBoolean(.1f)) colorPoint = Color.CHARTREUSE;
+        else if ((MathUtils.randomBoolean(.1f))) colorPoint = Color.RED;
+        else if ((MathUtils.randomBoolean(.1f))) colorPoint = Color.NAVY;
+        else if ((MathUtils.randomBoolean(.1f))) colorPoint = Color.BLUE;
+        else if ((MathUtils.randomBoolean(.2f))) colorPoint = Color.OLIVE;
         else if ((MathUtils.randomBoolean(.3f))) colorPoint = Color.YELLOW;
         else colorPoint = Color.BROWN;
         return colorPoint;
@@ -85,11 +89,16 @@ public class B2lights {
         buletFlash.upDate();
 
 
+
+
     }
 
     public void renderLights(Camera camera) {
         rayHandlerHero.setCombinedMatrix((OrthographicCamera) camera);
         rayHandlerHero.updateAndRender();
+//        float a = MathUtils.random(1f);
+//        System.out.println(a);
+//        rayHandlerHero.setAmbientLight(a);
     }
 
 

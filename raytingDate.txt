@@ -1,1 +1,0 @@
-[{uuid='Vity', score=60, gameCounter=511, deathCounter=588}, {uuid='Vity', score=370, gameCounter=176, deathCounter=436}, {uuid='Vity', score=305, gameCounter=29, deathCounter=308}]/n

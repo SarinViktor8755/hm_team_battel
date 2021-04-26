@@ -20,6 +20,7 @@ import com.mygdx.game.Lighting.Lighting;
 import com.mygdx.game.MainGaming;
 import com.mygdx.game.Service.OperationVector;
 import com.mygdx.game.Service.StaticService;
+import com.mygdx.game.Service.TimeService;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -411,6 +412,7 @@ public class MainCharacter extends Actor {
     }
 
     public void renderPlayers(AnimationPers animationPers) {
+       // System.out.println(Ra.generateTokken());
         try {
             //mg.getBatch().setColor(1,.7f,.8f,1);
             Iterator<Integer> iter = mg.getHero().getOtherPlayers().getPlayersList().keySet().iterator();
