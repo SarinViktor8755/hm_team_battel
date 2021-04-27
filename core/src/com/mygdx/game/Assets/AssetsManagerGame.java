@@ -23,6 +23,7 @@ public class AssetsManagerGame {
         assetManager.load("audio/best.ogg", Sound.class);
         assetManager.load("audio/rockroll.ogg", Sound.class);
         assetManager.load("audio/best.ogg", Sound.class);
+        assetManager.load("audio/music.ogg", Sound.class);
         assetManager.load("audio/hit1.ogg", Sound.class);
         assetManager.load("audio/hit2.ogg", Sound.class);
         assetManager.load("audio/death1.ogg", Sound.class);

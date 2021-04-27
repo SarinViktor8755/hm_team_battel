@@ -138,6 +138,144 @@
         ]
     },
     {
+        "outputFile": "F:\\game\\hm_team_battel\\hm_team_battel\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-af\\values-af.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 201,
+                    "endOffset": 302
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\b3566676b50110bd8affa14089a6c1bbc39ca350\\output\\res\\values-af\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 285,
+                        "endColumn": 201,
+                        "endOffset": 486
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 307,
+                    "endColumn": 71,
+                    "endOffset": 374
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-af\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 237,
+                        "endColumn": 67,
+                        "endOffset": 304
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 379,
+                    "endColumn": 115,
+                    "endOffset": 490
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-af\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 0,
+                        "startOffset": 305,
+                        "endColumn": 111,
+                        "endOffset": 416
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 495,
+                    "endColumn": 68,
+                    "endOffset": 559
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-af\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 0,
+                        "startOffset": 417,
+                        "endColumn": 64,
+                        "endOffset": 481
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 564,
+                    "endColumn": 67,
+                    "endOffset": 627
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-af\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 0,
+                        "startOffset": 482,
+                        "endColumn": 63,
+                        "endOffset": 545
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 632,
+                    "endColumn": 85,
+                    "endOffset": 713
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-af\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 0,
+                        "startOffset": 546,
+                        "endColumn": 81,
+                        "endOffset": 627
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 718,
+                    "endColumn": 117,
+                    "endOffset": 831
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-af\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 0,
+                        "startOffset": 628,
+                        "endColumn": 113,
+                        "endOffset": 741
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "F:\\game\\hm_team_battel\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-af\\values-af.xml",
         "map": [
             {
