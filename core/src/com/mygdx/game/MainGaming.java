@@ -19,6 +19,7 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets.AssetsManagerGame;
 import com.mygdx.game.Characters.MainCharacter;
+import com.mygdx.game.Characters.MusicGame;
 import com.mygdx.game.ClientNetWork.MainClient;
 import com.mygdx.game.HUDAudio.AudioEngine;
 import com.mygdx.game.HUDAudio.Hud;
@@ -35,6 +36,8 @@ import com.mygdx.game.Service.OperationVector;
 
 public class MainGaming implements Screen {
     private World world;
+
+    private MusicGame musicGame;
 
     private MainClient mainClient;
     private ZombiKiller zk;
@@ -103,6 +106,8 @@ public class MainGaming implements Screen {
         camera = new OrthographicCamera(zk.WHIDE_SCREEN, zk.HIDE_SCREEN);
         viewport = new FillViewport(zk.WHIDE_SCREEN, zk.HIDE_SCREEN, camera);
 
+        musicGame = new MusicGame();
+
         // System.out.println(zk.isAndroid() + "1111111111111111111111");
         if (zk.isAndroid()) apInput = new AndroidInputProcessorGamePley(this);
         else {
@@ -116,6 +121,8 @@ public class MainGaming implements Screen {
         textureAim = getAssetsManagerGame().get("character/character", TextureAtlas.class).findRegion("aim");
         this.timeInGame = 0;
         renderStartScreen = new RenderStartScreen(zk, camera, viewport, getBatch());
+
+        musicGame.pleyMusic();
     }
 
     public float getTimeInGame() {
@@ -134,14 +141,6 @@ public class MainGaming implements Screen {
             return;
         }
 
-        //   System.out.println("assets:: " + AssetsManagerGame.loadAsset(zk.assetsManagerGame));
-//        System.out.println(getHero().getPosition());
-//        System.out.println("camera " +getCamera().position);
-//        getBatch().getTransformMatrix().scl(55);
-//        getBatch().getProjectionMatrix().scl(55);
-//        getBatch().getProjectionMatrix().inv();
-//        viewport.
-        // System.out.println(Gdx.graphics.getHeight());
         float dt = Gdx.graphics.getDeltaTime();
         apInput.act(delta);
         getMainClient().actionMainClient();
@@ -149,8 +148,6 @@ public class MainGaming implements Screen {
         batch.setProjectionMatrix(camera.combined);
         Gdx.gl.glClearColor(.2f + (getHero().getGlobalAlpha() / 50), .2f - (getHero().getGlobalAlpha() / 80), .2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-//        getBatch().setProjectionMatrix(getBatch().getProjectionMatrix().scl(.2f));
-//        getBatch().setProjectionMatrix(getBatch().getProjectionMatrix().scl(.3f));
 
         batch.begin();
 
