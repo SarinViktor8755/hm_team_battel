@@ -37,7 +37,7 @@ import com.mygdx.game.Service.OperationVector;
 public class MainGaming implements Screen {
     private World world;
 
-    private MusicGame musicGame;
+    public MusicGame musicGame;
 
     private MainClient mainClient;
     private ZombiKiller zk;
@@ -155,7 +155,7 @@ public class MainGaming implements Screen {
 
         gHero.draw(batch, 1);
        // camera.update();
-        RaitingService.generateTokken();
+       //// RaitingService.generateTokken();
         getHero().getLith().renderLights(camera); // освещение
         batch.end();
 
@@ -239,6 +239,7 @@ public class MainGaming implements Screen {
         hud.dispose();
         batch.dispose();
         gSpace.dispose();
+        musicGame.dispose();
     }
 
     public AudioEngine getAudioEngine() {

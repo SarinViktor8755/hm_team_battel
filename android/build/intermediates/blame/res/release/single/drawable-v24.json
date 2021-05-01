@@ -1,5 +1,9 @@
 [
     {
+        "merged": "F:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\drawable-v24\\ic_launcher_foreground.xml",
+        "source": "F:\\game\\1211\\hm_team_battel\\android\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
         "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\drawable-v24\\ic_launcher_foreground.xml",
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\drawable-v24\\ic_launcher_foreground.xml"
     }

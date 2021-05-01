@@ -79,6 +79,7 @@ public class SoundTrack {
     private void youWin() {
         mainGaming.getAudioEngine().pleyYouWin();
         mainGaming.getHero().getPoolBlood().startingAdWiner();
+        mainGaming.musicGame.stopMusic();
         //   System.out.println("WINER");
     }
 
@@ -86,6 +87,7 @@ public class SoundTrack {
     private void youLose() {
         mainGaming.getAudioEngine().pleyYouLoose();
         mainGaming.getHero().getPoolBlood().startingAdLose();
+        mainGaming.musicGame.stopMusic();
         //  System.out.println("LOSE");
     }
 

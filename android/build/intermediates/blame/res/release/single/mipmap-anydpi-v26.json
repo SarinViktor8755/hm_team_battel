@@ -4,6 +4,14 @@
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "F:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26\\ic_launcher_round.xml",
+        "source": "F:\\game\\1211\\hm_team_battel\\android\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "F:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26\\ic_launcher.xml",
+        "source": "F:\\game\\1211\\hm_team_battel\\android\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
         "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26\\ic_launcher.xml",
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     }

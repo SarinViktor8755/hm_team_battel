@@ -138,6 +138,144 @@
         ]
     },
     {
+        "outputFile": "F:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hr\\values-hr.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 190,
+                    "endOffset": 291
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\b3566676b50110bd8affa14089a6c1bbc39ca350\\output\\res\\values-hr\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 285,
+                        "endColumn": 190,
+                        "endOffset": 475
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 296,
+                    "endColumn": 72,
+                    "endOffset": 364
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-hr\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 237,
+                        "endColumn": 68,
+                        "endOffset": 305
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 369,
+                    "endColumn": 121,
+                    "endOffset": 486
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-hr\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 0,
+                        "startOffset": 306,
+                        "endColumn": 117,
+                        "endOffset": 423
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 491,
+                    "endColumn": 69,
+                    "endOffset": 556
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-hr\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 0,
+                        "startOffset": 424,
+                        "endColumn": 65,
+                        "endOffset": 489
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 561,
+                    "endColumn": 66,
+                    "endOffset": 623
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-hr\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 0,
+                        "startOffset": 490,
+                        "endColumn": 62,
+                        "endOffset": 552
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 628,
+                    "endColumn": 87,
+                    "endOffset": 711
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-hr\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 0,
+                        "startOffset": 553,
+                        "endColumn": 83,
+                        "endOffset": 636
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 716,
+                    "endColumn": 118,
+                    "endOffset": 830
+                },
+                "from": {
+                    "file": "C:\\Users\\1\\.android\\build-cache\\f801b113e5fad4601817d9b95879f14dd4ab8a81\\output\\res\\values-hr\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 0,
+                        "startOffset": 637,
+                        "endColumn": 114,
+                        "endOffset": 751
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "F:\\game\\hm_team_battel\\hm_team_battel\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hr\\values-hr.xml",
         "map": [
             {

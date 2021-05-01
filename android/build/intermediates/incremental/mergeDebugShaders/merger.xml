@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\PortableGit\hm_team_battel\android\src\main\shaders"/></dataSet><dataSet config="debug"><source path="D:\PortableGit\hm_team_battel\android\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="F:\game\1211\hm_team_battel\android\src\main\shaders"/></dataSet><dataSet config="debug"><source path="F:\game\1211\hm_team_battel\android\src\debug\shaders"/></dataSet></merger>

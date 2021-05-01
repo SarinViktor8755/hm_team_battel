@@ -26,6 +26,10 @@ public class MusicGame {
         this.music.setVolume(0);
     }
 
+    public void musicStopPley(){
+        this.music.stop();
+    }
+
     public void dispose(){
         this.music.dispose();
     }

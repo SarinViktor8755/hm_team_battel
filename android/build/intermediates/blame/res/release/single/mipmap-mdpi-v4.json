@@ -4,11 +4,23 @@
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "F:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\ic_launcher_foreground.png",
+        "source": "F:\\game\\1211\\hm_team_battel\\android\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\ic_launcher_foreground.png",
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\ic_launcher_round.png",
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "F:\\game\\1211\\hm_team_battel\\android\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\ic_launcher_round.png",
+        "source": "F:\\game\\1211\\hm_team_battel\\android\\res\\mipmap-mdpi\\ic_launcher_round.png"
     }
 ]

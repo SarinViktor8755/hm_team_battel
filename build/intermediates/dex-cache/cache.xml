@@ -3,12 +3,39 @@
 
     <item
         is-multidex="true"
-        jar="D:\PortableGit\hm_team_battel\core\build\libs\core-1.2.jar"
+        jar="C:\Users\1\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdxpay\gdx-pay\1.3.2\a2cca47686603c26e781d54df37f7d7f133fbb\gdx-pay-1.3.2.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.3"
-        sha1="b9f621a8d3e925a85b345b67486ef6efc1cdd2e3">
-        <dex dex="D:\PortableGit\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\4\core-1.2_3837b51238ef29b89483bf7007a4016e69bdce06\classes.dex" />
+        sha1="00a2cca47686603c26e781d54df37f7d7f133fbb">
+        <dex dex="F:\game\1211\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\gdx-pay-1.3.2_34a22dfac272da058ffdc1c4d569d32c1fa69955\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\1\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="25ea2e8b0c338a877313bd4672d3fe056ea78f0d">
+        <dex dex="F:\game\1211\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\jsr305-3.0.2_a2ab27bba6c6016cf5fbbacf7677d3d03dcf8307\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\1\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdxpay\gdx-pay-client\1.3.2\9fb1e0d566541a659cc8ec75284d22a0adc08270\gdx-pay-client-1.3.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="9fb1e0d566541a659cc8ec75284d22a0adc08270">
+        <dex dex="F:\game\1211\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\10\gdx-pay-client-1.3.2_7c76db9b06a70e22123242ee48ce34670f1de531\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\game\1211\hm_team_battel\core\build\libs\core-1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="0b49bc67d8dea927274d5c782fc983067e3a4b0c">
+        <dex dex="F:\game\1211\hm_team_battel\android\build\intermediates\transforms\dex\release\folders\1000\4\core-1.2_7505bd4aae77949da7b2160063cab8cb6e1a897b\classes.dex" />
     </item>
 
 </items>
