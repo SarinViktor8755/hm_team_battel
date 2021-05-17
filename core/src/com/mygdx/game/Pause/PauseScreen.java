@@ -15,6 +15,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.mygdx.game.Assets.AssetsManagerGame;
 import com.mygdx.game.Service.StaticService;
 import com.mygdx.game.ZombiKiller;
 
@@ -76,6 +77,7 @@ public class PauseScreen implements Screen {
 
     @Override
     public void show() {
+       // AssetsManagerGame.
 
         this.timer = 0;
         spriteBatch = new SpriteBatch();

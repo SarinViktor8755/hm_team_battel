@@ -5,10 +5,12 @@ package com.RatingSystem;
  */
 
 public class Personality {
-    private String uuid;
-    private int score;
-    private int gameCounter;
-    private int deathCounter;
+    private String uuid; // это id игрока
+    private int score; // счет игрока
+    private int gameCounter;// счетчик  чего то я забыл ))))
+    private int deathCounter; // счетчик Убийств
+
+    private int nomberConnect;
 
 
     public String getUuid() {
@@ -44,11 +46,12 @@ public class Personality {
     }
 
 
-    public Personality(String uuid, int score, int gameCounter, int deathCounter) {
+    public Personality(String uuid, int score, int gameCounter, int deathCounter, int nomerCoonect) {
         this.uuid = uuid;
         this.score = score;
         this.gameCounter = gameCounter;
         this.deathCounter = deathCounter;
+        this.nomberConnect = nomerCoonect;
     }
 
     @Override

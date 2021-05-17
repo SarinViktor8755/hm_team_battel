@@ -121,9 +121,8 @@ public class GameServer extends Listener {
             this.serverLauncher = serverLauncher;
             this.commandLogic = new CommandLogic();
 
-            raitingSystem.fillRatingSystem();
-            System.out.println(raitingSystem);
-
+//            raitingSystem.fillRatingSystem();
+//            System.out.println(raitingSystem);
 
 
             server.addListener(new Listener() {
@@ -192,10 +191,15 @@ public class GameServer extends Listener {
 
                                    public void connected(Connection c) {// подключение
                                        snapShots.addPlayer(c.getID());
+                                       raitingSystem.addNewPersone(c.getID());
+
+
                                        snapShots.getStockBase().packageTransferWeaponsForPlayer(c.getID());
                                        // FileLog.saveToFileNewThred("connected  " + c.getID());
                                        responseRequests.getStockBase().messageRatingKillTime(c.getID());
-                                       FileLog.saveToFileNewThred("LivePlayer::  " + getSnapShots().getSizeLivePlayers());
+                                       //FileLog.saveToFileNewThred("LivePlayer::  " + getSnapShots().getSizeLivePlayers());
+
+
                                    }
                                }
             );

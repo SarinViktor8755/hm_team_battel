@@ -14,7 +14,7 @@ public class RaitingService {
         else token = prefs.getString(tokken);
         prefs.putString(tokken, token);
         prefs.flush();
-        System.out.println(prefs.getString(tokken));
+        //System.out.println(prefs.getString(tokken));
         return token;
     }
 

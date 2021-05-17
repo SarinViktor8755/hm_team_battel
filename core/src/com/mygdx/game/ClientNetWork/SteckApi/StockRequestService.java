@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.ClientNetWork.Network;
 import com.mygdx.game.MainGaming;
 import com.mygdx.game.Service.OperationVector;
+import com.mygdx.game.Service.RaitingService;
 import com.mygdx.game.Service.StaticService;
 import com.mygdx.game.Service.TimeService;
 
@@ -135,8 +136,6 @@ public class StockRequestService {
             try {
                 mg.getHero().getOtherPlayers().getPlayerToID(entry.getValue().nomer_pley).getAnimatonBody().addAnimationAttackPipe(); // NullPointerException
                 mg.getAudioEngine().pleySoundKickStick(mg.getHero().getOtherPlayers().getXplayToId(entry.getValue().nomer_pley), mg.getHero().getOtherPlayers().getYplayToId(entry.getValue().nomer_pley));
-
-
             } catch (NullPointerException e) {
                 System.out.println("Error consumer Stick");
                 e.printStackTrace();
@@ -226,6 +225,17 @@ public class StockRequestService {
             //System.out.println(entry.getValue());
             return;
         }
+
+        if (tip == -42) { // Сервер запрашивает ваш ID
+            String id = RaitingService.generateTokken();
+            mg.getMainClient().getOutStock().addStockInQuery(new RequestStock(// отправить на сервер
+                    mg.getMainClient().getAndUpdateRealTime(), -42,
+                    null, null,
+                    null, null, null, null, null, id
+            ));
+            return;
+        }
+
 
         if (tip == -9) { // получение параметров
 //            System.out.println("-----");

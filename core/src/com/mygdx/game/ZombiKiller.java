@@ -3,6 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
+import com.mygdx.game.Assets.AssetsManagerGame;
 import com.mygdx.game.LoadingScreen.LoadingScreen;
 import com.mygdx.game.LoadingScreen.StartScreen;
 import com.mygdx.game.Pause.PauseScreen;
@@ -43,8 +44,6 @@ public class ZombiKiller extends Game {
     }
 
 
-
-
     public boolean isAndroid(){
         if(tip == 1) return true; return false;
     }
@@ -59,7 +58,6 @@ public class ZombiKiller extends Game {
         this.assetsManagerGame = new AssetManager();
         getMainGaming();
 
-
     }
 
     public void getPauseScreen(){
@@ -67,6 +65,8 @@ public class ZombiKiller extends Game {
         //this.mGaming.dispose();
         this.pauseScreen = new PauseScreen(this,true);
         this.setScreen(this.pauseScreen);
+        AssetsManagerGame.unloadAllAsset(mGaming.getAssetsManagerGame());
+        mGaming.musicGame.dispose();
     }
 
     public void getPauseScreen(int PauseTime){
@@ -76,6 +76,9 @@ public class ZombiKiller extends Game {
         if(mGaming.getTimeInGame() < 40) ad = false;
         this.pauseScreen = new PauseScreen(this, PauseTime,ad);
         this.setScreen(this.pauseScreen);
+       // mGaming.getAssetsManagerGame().
+        AssetsManagerGame.unloadAllAsset(mGaming.getAssetsManagerGame());
+        mGaming.musicGame.dispose();
     }
 
     public void getLoadingScreen(){
@@ -86,6 +89,8 @@ public class ZombiKiller extends Game {
     public void loarToGame(){
         this.loadingScreen.dispose();
         this.mGaming = new MainGaming(this);
+        mGaming.dispose();
+        mGaming.musicGame.dispose();
 
        // this.setScreen(this.mGaming);
     }

@@ -46,6 +46,10 @@ public class AssetsManagerGame {
         assetManager.load("voice/voice5.ogg", Sound.class);
         assetManager.load("audio/lostPrimuschestvo.ogg", Sound.class);
         assetManager.load("fonts/font.fnt", BitmapFont.class);
+
+
+        assetManager.load("audio/shotgun.ogg", Sound.class);
+
         assetManager.finishLoading();
         return assetManager;
     }

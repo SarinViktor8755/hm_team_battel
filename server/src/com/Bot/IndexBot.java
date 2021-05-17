@@ -52,7 +52,7 @@ public class IndexBot extends Thread {
                     }
                     units.put(id, new SimulationUnit(this, id, tackt));
                 }
-                ;
+
                 //////////////////////////////
 
                 try {

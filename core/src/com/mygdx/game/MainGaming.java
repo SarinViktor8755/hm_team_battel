@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.utils.GdxNativesLoader;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -86,11 +87,7 @@ public class MainGaming implements Screen {
     public void show() {
         this.world = new World(new Vector2(0,0),true);
         this.startScreen = new StartScreen(zk);
-        //zk.setScreen(startScreen);
-        //        System.out.println("------------");
-        //        System.out.println(Gdx.graphics.getWidth());
-        //        System.out.println(Gdx.graphics.getHeight());
-        //        System.out.println(" -- ");
+
         setAssetsManagerGame(AssetsManagerGame.loadAllAsset(getAssetsManagerGame()));
         this.audioEngine = new AudioEngine(this);
         this.gSpace = new GameSpace();

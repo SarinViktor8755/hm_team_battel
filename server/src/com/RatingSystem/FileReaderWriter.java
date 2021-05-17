@@ -17,10 +17,9 @@ public class FileReaderWriter {
 
     public void readFromFile(ArrayList<Personality> rl) {
 
-
     }
 
-    public void saveFromFile(ArrayList<Personality> rl) {
+    public void saveFromFile(ArrayList<Personality> rl) { // сохранение Обьектов в файл
         FileWriter writer = null;
         try {
             writer = new FileWriter(urlFile);

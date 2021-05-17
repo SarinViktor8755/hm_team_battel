@@ -49,6 +49,9 @@ public class IndexMatch extends Thread {
             starMatch();
         }
         currentTimerMatch -= STEP;
+        ////////////
+        gameServer.raitingSystem.checkEmptiness();
+        gameServer.
     }
 
     public void addFragDromPlayer(int idPlayer) {
@@ -101,6 +104,8 @@ public class IndexMatch extends Thread {
 //                if (currentTimerMatch <= 0) stopMatch();
 //                if (!isMatchRun()) this.starMatch();
 //                else upDateTimeMatch();
+
+
 
                 Thread.sleep((long) STEP);
             }

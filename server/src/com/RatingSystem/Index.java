@@ -19,22 +19,40 @@ public class Index {
     }
 
     public void fillRatingSystem() {
+//
+//        for (int i = 0; i < MathUtils.random(40); i++) {
+//            this.raitingList.add(new Personality("Vity", MathUtils.random(600), MathUtils.random(600), MathUtils.random(600)));
+//        }
 
-        for (int i = 0; i < MathUtils.random(40); i++) {
-            this.raitingList.add(new Personality("Vity", MathUtils.random(600), MathUtils.random(600), MathUtils.random(600)));
-        }
-
-        fileReaderWriter.saveFromFile(raitingList);
+//        fileReaderWriter.saveFromFile(raitingList);
 
     }
 
+    public void addNewPersone(int idConnect) {
+        this.raitingList.add(new Personality(null, 0, 0, 0, idConnect));
+    }
+
+    public void checkEmptiness() { // проеряет на не заполненую персону
+        Personality p;
+        for (int i = 0; i < this.raitingList.size(); i++) {
+            p = this.raitingList.get(i);
+            if (p.getUuid() == null) {
+                System.out.println(p);
+
+            }
+
+            System.out.println("checkEmptiness");
+
+
+        }
+    }
 
     @Override
     public String toString() {
         return raitingList.toString();
     }
 
-    public void sortRaiting(){
+    public void sortRaiting() {
 
         Comparator<Integer> cmp = new Comparator<Integer>() {
             @Override
@@ -59,12 +77,6 @@ public class Index {
 
 
     }
-
-
-
-
-
-
 
 
 }
