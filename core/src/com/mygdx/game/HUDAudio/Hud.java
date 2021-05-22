@@ -29,7 +29,7 @@ public class Hud implements Disposable {
     private Stage stageHUD;
     private boolean connect;
     private EndingMathHUD endingMathHUD;
-    private int point1, point2, timeM, timeS, myFrags, timer, liderMath;
+    private int point1, point2, timeM, timeS, myFrags, timer, liderMath, scorePlayer;
     private TextureRegion textureAim;
     public boolean first;
     boolean reversinterfece = false;
@@ -69,7 +69,6 @@ public class Hud implements Disposable {
     }
 
     public Hud(MainGaming mainGaming) {
-
         font = mainGaming.getAssetsManagerGame().get("fonts/font.fnt", BitmapFont.class);
         this.reversinterfece = false;
         endingMathHUD = new EndingMathHUD(mainGaming);
@@ -88,6 +87,8 @@ public class Hud implements Disposable {
         liderMath = 0;
         this.timer = 180000;
         connect = true;
+
+        scorePlayer = -50;
 
         Label.LabelStyle style = new Label.LabelStyle(font, Color.WHITE);
 
@@ -117,7 +118,6 @@ public class Hud implements Disposable {
 
         coinCountLabel = new Label("", style);
 
-
         //raitingTextLabel.setColor(.3f,.3f,1,1);
         stageHUD.addActor(table);
 
@@ -142,6 +142,7 @@ public class Hud implements Disposable {
 
 
     public void update(int point2, int myFrags, int timer, int point1) {
+
 //        System.out.println();
 //        System.out.println(myFrags);
 //        // System.out.println(max_fargs);
@@ -155,6 +156,9 @@ public class Hud implements Disposable {
         this.liderMathLabel.setText("");
         //   this.liderMath = max_fargs;
         this.endingMathHUD.setUpdateToServer(true);
+
+        //if(this.scorePlayer == )
+
     }
 
 
@@ -176,8 +180,6 @@ public class Hud implements Disposable {
     }
 
     public void update(float delta) {
-
-
 
         //////////////////////////
         this.timer = (int) (this.timer - (delta * 1000));
@@ -218,6 +220,18 @@ public class Hud implements Disposable {
         }
 
         this.endingMathHUD.update(delta);
+//запрос счета
+//        if ((scorePlayer == -50) && (MathUtils.randomBoolean(.1f))) {
+//            //if() System.out.println("Запрос !!!");
+//            try {
+//
+//            } catch (NullPointerException e) {
+//            }
+////            mainGaming.getMainClient().sendToServer(88, 1, 2, 3, 4, 6, 5, 3, "id");
+//            System.out.println("Отправить запрос");
+//            ///запрашиваем счет
+//
+//        }
     }
 
     public Label getTimerTextLabel() {
@@ -257,5 +271,11 @@ public class Hud implements Disposable {
 
     public int getFCommand2() {
         return point2;
+    }
+
+    public boolean scoreIsNull() {
+        if (scorePlayer == -50) return true;
+        return false;
+
     }
 }

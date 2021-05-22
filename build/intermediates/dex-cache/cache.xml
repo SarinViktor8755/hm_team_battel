@@ -34,8 +34,8 @@
         jumboMode="false"
         optimize="true"
         revision="28.0.3"
-        sha1="0b49bc67d8dea927274d5c782fc983067e3a4b0c">
-        <dex dex="F:\game\1211\hm_team_battel\android\build\intermediates\transforms\dex\release\folders\1000\4\core-1.2_7505bd4aae77949da7b2160063cab8cb6e1a897b\classes.dex" />
+        sha1="257cee3102e58417282e6eec3c75d1c6d15c8eb7">
+        <dex dex="F:\game\1211\hm_team_battel\android\build\intermediates\transforms\dex\debug\folders\1000\4\core-1.2_7505bd4aae77949da7b2160063cab8cb6e1a897b\classes.dex" />
     </item>
 
 </items>

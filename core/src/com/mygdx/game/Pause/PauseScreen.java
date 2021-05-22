@@ -44,7 +44,13 @@ public class PauseScreen implements Screen {
 
     Music music;
 
+
+
+
+
     public PauseScreen(ZombiKiller zombiKiller, boolean adShow) {
+        
+        AssetsManagerGame.loadAllAsset(zombiKiller.assetsManagerGame);
         this.zk = zombiKiller;
         this.durationPause = 10;
         TextureAtlas = zombiKiller.assetsManagerGame.get("pauseAsset/pause", TextureAtlas.class);
@@ -62,6 +68,7 @@ public class PauseScreen implements Screen {
     }
 
     public PauseScreen(ZombiKiller zombiKiller, float time, boolean adShow) { // запуск если игрок не отыграл полной игры - и не должен видеть рекламы
+        AssetsManagerGame.loadAllAsset(zombiKiller.assetsManagerGame);
         this.zk = zombiKiller;
         this.durationPause = time;
         TextureAtlas = zombiKiller.assetsManagerGame.get("pauseAsset/pause", TextureAtlas.class);
@@ -77,8 +84,6 @@ public class PauseScreen implements Screen {
 
     @Override
     public void show() {
-       // AssetsManagerGame.
-
         this.timer = 0;
         spriteBatch = new SpriteBatch();
         camera = new OrthographicCamera(zk.WHIDE_SCREEN, zk.HIDE_SCREEN);

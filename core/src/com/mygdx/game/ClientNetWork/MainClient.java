@@ -79,7 +79,6 @@ public class MainClient {
             }catch (SocketTimeoutException e){
                 System.out.println("SocketTimeoutException");
             }
-
             mg.getHero().getOtherPlayers().getPlayersList().clear();
             System.out.println("reconnect");
             return true;
@@ -195,6 +194,24 @@ public class MainClient {
             if (res < -3) pingError += -.001f;
         }
         if (pingError > .1f) pingError = .1f;
+    }
+
+    public void sendToServer(Integer tip, Integer p2, Integer p3, Integer p4, Integer p5, Integer p6, Integer p7, Integer p8, String text){
+       // System.out.println(text);
+        mg.getMainClient().getOutStock().addStockInQuery(new RequestStock(// отправить на сервер
+                mg.getMainClient().getAndUpdateRealTime(),tip,p2,p3,p4,p5,p6,p7,p8,text)
+        );
+//////////////////////////////////////////////////
+        mg.getMainClient().getOutStock().addStockInQuery(new RequestStock(// отправить на сервер
+                mg.getMainClient().getAndUpdateRealTime(),
+                -31,
+                2, 3,
+                3213, null, null, null, null,
+                null
+        ));
+
+//////////////////////////////////////////////////
+
     }
 
     public float getPing() {

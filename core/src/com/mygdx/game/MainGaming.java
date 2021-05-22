@@ -10,14 +10,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
+
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Group;
+
 import com.badlogic.gdx.utils.GdxNativesLoader;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FillViewport;
-import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.StretchViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
+
 import com.mygdx.game.Assets.AssetsManagerGame;
 import com.mygdx.game.Characters.MainCharacter;
 import com.mygdx.game.Characters.MusicGame;
@@ -30,9 +29,12 @@ import com.mygdx.game.Ip.AndroidInputProcessorGamePley;
 import com.mygdx.game.Ip.DesktopInputProcessorGamePley;
 import com.mygdx.game.Ip.InputProc;
 import com.mygdx.game.LoadingScreen.StartScreen;
+
 import com.mygdx.game.Service.RaitingService;
 import com.mygdx.game.SpaceMap.IndexMap;
 import com.mygdx.game.Service.OperationVector;
+
+
 
 
 public class MainGaming implements Screen {
@@ -83,17 +85,22 @@ public class MainGaming implements Screen {
         this.zk = zk;
     }
 
+    public void createConnct(){
+        mainClient = new MainClient(this);
+        mainClient.coonectToServer();
+    }
+
     @Override
     public void show() {
+        GdxNativesLoader.load();
         this.world = new World(new Vector2(0,0),true);
         this.startScreen = new StartScreen(zk);
 
         setAssetsManagerGame(AssetsManagerGame.loadAllAsset(getAssetsManagerGame()));
         this.audioEngine = new AudioEngine(this);
         this.gSpace = new GameSpace();
+        createConnct();
 
-        mainClient = new MainClient(this);
-        mainClient.coonectToServer();
 
         this.indexMap = new IndexMap(this);
         this.hero = new MainCharacter(this);
@@ -118,8 +125,10 @@ public class MainGaming implements Screen {
         textureAim = getAssetsManagerGame().get("character/character", TextureAtlas.class).findRegion("aim");
         this.timeInGame = 0;
         renderStartScreen = new RenderStartScreen(zk, camera, viewport, getBatch());
-
         musicGame.pleyMusic();
+        //System.out.println(RaitingService.generateTokken());
+        mainClient.sendToServer(-31,null,null,null,null,null,null,null, RaitingService.generateTokken());
+
     }
 
     public float getTimeInGame() {
@@ -132,6 +141,7 @@ public class MainGaming implements Screen {
 
     @Override
     public void render(float delta) {
+
         if (!mainClient.isConnectToServer()) {
             renderStartScreen.render(delta);
             mainClient.coonectToServer();
@@ -228,15 +238,15 @@ public class MainGaming implements Screen {
 
     @Override
     public void hide() {
-
+        musicGame.stopMusic();
+        musicGame.dispose();
     }
 
     @Override
     public void dispose() {
-        hud.dispose();
-        batch.dispose();
-        gSpace.dispose();
+        musicGame.stopMusic();
         musicGame.dispose();
+
     }
 
     public AudioEngine getAudioEngine() {

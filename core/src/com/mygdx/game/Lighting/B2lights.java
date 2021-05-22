@@ -1,17 +1,13 @@
 package com.mygdx.game.Lighting;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-
 import com.badlogic.gdx.graphics.Texture;
-
 import com.badlogic.gdx.math.MathUtils;
-
 import com.badlogic.gdx.physics.box2d.Body;
-
 import com.badlogic.gdx.physics.box2d.World;
+
 import com.mygdx.game.MainGaming;
 
 import java.util.ArrayList;

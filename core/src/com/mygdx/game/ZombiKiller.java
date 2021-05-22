@@ -3,6 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.mygdx.game.Assets.AssetsManagerGame;
 import com.mygdx.game.LoadingScreen.LoadingScreen;
 import com.mygdx.game.LoadingScreen.StartScreen;
@@ -56,6 +57,8 @@ public class ZombiKiller extends Game {
     public void create() {
         this.startScreen = new StartScreen(this);
         this.assetsManagerGame = new AssetManager();
+//       // while (AssetsManagerGame.loadAsset(assetsManagerGame))
+//        this.assetsManagerGame = AssetsManagerGame.loadAllAsset(this.assetsManagerGame);
         getMainGaming();
 
     }
@@ -65,20 +68,23 @@ public class ZombiKiller extends Game {
         //this.mGaming.dispose();
         this.pauseScreen = new PauseScreen(this,true);
         this.setScreen(this.pauseScreen);
-        AssetsManagerGame.unloadAllAsset(mGaming.getAssetsManagerGame());
-        mGaming.musicGame.dispose();
+        //AssetsManagerGame.unloadAllAsset(mGaming.getAssetsManagerGame());
+       // mGaming.musicGame.dispose();
     }
 
     public void getPauseScreen(int PauseTime){
-        //System.out.println("Pause Screen");
+
+      //  this.assetsManagerGame = AssetsManagerGame.loadAllAsset(this.assetsManagerGame);
         mGaming.getMainClient().client.stop();
         boolean ad = true;
-        if(mGaming.getTimeInGame() < 40) ad = false;
+        if(mGaming.getTimeInGame() < 10) ad = false;
         this.pauseScreen = new PauseScreen(this, PauseTime,ad);
         this.setScreen(this.pauseScreen);
+        mGaming.dispose();
        // mGaming.getAssetsManagerGame().
-        AssetsManagerGame.unloadAllAsset(mGaming.getAssetsManagerGame());
-        mGaming.musicGame.dispose();
+        //AssetsManagerGame.unloadAllAsset(mGaming.getAssetsManagerGame());
+        //mGaming.musicGame.dispose();
+
     }
 
     public void getLoadingScreen(){
@@ -87,17 +93,18 @@ public class ZombiKiller extends Game {
     }
 
     public void loarToGame(){
-        this.loadingScreen.dispose();
+
+       // this.loadingScreen.dispose();
         this.mGaming = new MainGaming(this);
         mGaming.dispose();
-        mGaming.musicGame.dispose();
+       // mGaming.musicGame.dispose();
 
        // this.setScreen(this.mGaming);
     }
 
     public void getMainGaming(){
         //if(this.loadingScreen != null) this.loadingScreen.dispose();
-        if(this.pauseScreen != null) this.pauseScreen.dispose();
+      //  if(this.pauseScreen != null) this.pauseScreen.dispose();
         this.mGaming = new MainGaming(this);
         this.setScreen(this.mGaming);
         //this.setScreen(this.startScreen);
@@ -112,7 +119,7 @@ public class ZombiKiller extends Game {
     }
 
     public void render() {
-        super.render(); // важно!
+            super.render(); // важно!
     }
 
 

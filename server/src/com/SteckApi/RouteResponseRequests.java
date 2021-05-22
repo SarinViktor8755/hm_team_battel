@@ -158,6 +158,31 @@ public class RouteResponseRequests {  // роутр запросов
             gameServer.getSnapShots().getStockBase().getOutMess().addStockOutQuery(new RequestStockServer(stockMess, nomerP));
         }
 
+        if (in.tip == 502) { // ЗАПРОС ПАРАМЕТРОВ
+            Network.StockMess stockMess = new Network.StockMess();
+            stockMess.tip = -9;
+            stockMess.nomer_pley = nomerP;
+            stockMess.time_even = TimeService.getTimeGame() * (-1);
+            stockMess.p1 = (int) gameServer.indexMatch.getCurrentTimerMatch();// ВРЕМЯ МАТЧАЯ все ОК или время паузы
+            stockMess.p3 = gameServer.getCommandLogic().getTeamPoints1();// команда 1 фраги
+            stockMess.p4 = gameServer.getCommandLogic().getTeamPoints2(); // команда 2 фраги
+            stockMess.p2 = gameServer.indexMatch.getFragFromPlayer(nomerP); // ФРАГИ
+            gameServer.getSnapShots().getStockBase().getOutMess().addStockOutQuery(new RequestStockServer(stockMess, nomerP));
+        }
+
+        if (in.tip == -31) { // запрос параметров игрока по рейтинговой системы
+            Network.StockMess stockMess = new Network.StockMess();
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println(stockMess.textM);
+            System.out.println(stockMess);
+
+
+
+
+
+
+        }
+
         if (in.tip == -666) { // возраждение
             { // ударил соперника = далее расчет демеджа
                 if (stockBase.addInSteckIn(in, nomerP)) {

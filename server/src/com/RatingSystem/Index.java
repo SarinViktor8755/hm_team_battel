@@ -37,11 +37,11 @@ public class Index {
         for (int i = 0; i < this.raitingList.size(); i++) {
             p = this.raitingList.get(i);
             if (p.getUuid() == null) {
-                System.out.println(p);
+               // System.out.println(p);
 
             }
 
-            System.out.println("checkEmptiness");
+          //  System.out.println("checkEmptiness");
 
 
         }

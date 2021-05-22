@@ -35,7 +35,7 @@ public class LoadingScreen implements Screen {
 
     @Override
     public void show() {
-        AssetsManagerGame.loadLoadingScreen(zk.assetsManagerGame);
+     //   AssetsManagerGame.loadLoadingScreen(zk.assetsManagerGame);
         this.timer = 0;
         this.spriteBatch = new SpriteBatch();
         this.camera = new OrthographicCamera();
@@ -44,7 +44,7 @@ public class LoadingScreen implements Screen {
         spriteBatch = new SpriteBatch();
         camera = new OrthographicCamera(zk.WHIDE_SCREEN, zk.HIDE_SCREEN);
         viewport = new FillViewport(zk.WHIDE_SCREEN, zk.HIDE_SCREEN, camera);
-        AssetsManagerGame.loadAllAsset(zk.assetsManagerGame);
+        //zk.assetsManagerGame = AssetsManagerGame.loadAllAsset(zk.assetsManagerGame);
 
         arrArm = new float[]{0, 0, 0, 0, 0};
 

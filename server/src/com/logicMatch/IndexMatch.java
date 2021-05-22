@@ -1,11 +1,10 @@
 package com.logicMatch;
 
 
-import com.Bot.IndexBot;
 import com.FileLog;
 import com.GameServer;
 import com.Network;
-import com.mygdx.game.MainGaming;
+
 import com.mygdx.game.Service.TimeService;
 
 import java.io.IOException;
@@ -14,7 +13,7 @@ import static com.Network.register;
 
 public class IndexMatch extends Thread {
     private GameServer gameServer;
-    private float MAX_TIMER_MATH = 60_000 * 3;
+    private float MAX_TIMER_MATH = 4_000 * 3;
     private float MAX_TIMER_PAUSE = 5_000;
     private final float STEP = 250;
     private float currentTimerMatch;
@@ -51,7 +50,7 @@ public class IndexMatch extends Thread {
         currentTimerMatch -= STEP;
         ////////////
         gameServer.raitingSystem.checkEmptiness();
-        gameServer.
+       // gameServer.
     }
 
     public void addFragDromPlayer(int idPlayer) {
