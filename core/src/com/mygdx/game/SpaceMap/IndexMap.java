@@ -5,6 +5,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g3d.Shader;
+import com.badlogic.gdx.graphics.g3d.shaders.DefaultShader;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.MainGaming;
@@ -35,6 +38,10 @@ public class IndexMap {
     public final int sizeTilde = 100;
     public final int lengthMap = sizeTilde * countMap;
 
+
+    ShaderProgram def;
+
+
     TextureAtlas obstacles;
 
     public IndexMap(MainGaming mainGaming) {
@@ -42,6 +49,12 @@ public class IndexMap {
         createAverageLevel();
         createLowerQualityMap();
         createTopQualityMap();
+
+
+
+        def = new ShaderProgram(DefaultShader.getDefaultVertexShader(),DefaultShader.getDefaultFragmentShader());
+
+
         //createFakePerspektiveLaier();
         //createFakePerspektiveLaier();
     }
@@ -83,6 +96,10 @@ public class IndexMap {
 
 
     public void renderBottomLevel() { // Рендер нижнего уровня
+        ShaderProgram.pedantic = false;
+
+
+
         for (int i = 0; i < countMap; i++) {
             for (int j = 0; j < countMap; j++) {
                 mainGaming.getBatch().draw(
@@ -95,6 +112,7 @@ public class IndexMap {
                 );
             }
         }
+        mainGaming.getBatch().setShader(null);
 
 
     }
@@ -236,7 +254,7 @@ public class IndexMap {
         mainGaming.getAssetsManagerGame().finishLoading();
         mainGaming.getAssetsManagerGame().isLoaded("map/obstacles");
 
-       // System.out.println(mainGaming.getAssetsManagerGame().isLoaded("map/obstacles"));
+        // System.out.println(mainGaming.getAssetsManagerGame().isLoaded("map/obstacles"));
         mainGaming.getAssetsManagerGame().get("map/obstacles");
 
         mainGaming.getAssetsManagerGame().finishLoading();
@@ -323,20 +341,20 @@ public class IndexMap {
         do {
             if (comand) {
                 x = MathUtils.random(0 + edge, 250);
-                y = MathUtils.random(0 , 250);
+                y = MathUtils.random(0, 250);
             } else {
                 x = MathUtils.random(lengthMap - 250, lengthMap);
                 y = MathUtils.random(lengthMap - 250, lengthMap);
             }
         } while (!canMove(x, y));
-       // System.out.println(x + "   " + y);
+        // System.out.println(x + "   " + y);
         return new Vector2(x, y);
     }
 
 
-    public void getObjectFromLightis(){
-        for (Map.Entry<Integer, AverageObject> entry: this.averageLevelObjects.entrySet());
-          //  System.out.println(entry.getKey() + " = " + entry.getValue());
+    public void getObjectFromLightis() {
+        for (Map.Entry<Integer, AverageObject> entry : this.averageLevelObjects.entrySet()) ;
+        //  System.out.println(entry.getKey() + " = " + entry.getValue());
 
     }
 

@@ -198,17 +198,30 @@ public class MainClient {
 
     public void sendToServer(Integer tip, Integer p2, Integer p3, Integer p4, Integer p5, Integer p6, Integer p7, Integer p8, String text){
        // System.out.println(text);
-        mg.getMainClient().getOutStock().addStockInQuery(new RequestStock(// отправить на сервер
-                mg.getMainClient().getAndUpdateRealTime(),tip,p2,p3,p4,p5,p6,p7,p8,text)
-        );
+//        System.out.println("!!!!!!!!!!!!!!!");
+//        RequestStock requestStock = new RequestStock(// отправить на сервер
+//                mg.getMainClient().getAndUpdateRealTime(),tip,p2,p3,p4,p5,p6,p7,p8,text);
+//        mg.getMainClient().getOutStock().addStockInQuery(requestStock);
+//        System.out.println(requestStock);
+
 //////////////////////////////////////////////////
+//        mg.getMainClient().getOutStock().addStockInQuery(new RequestStock(// отправить на сервер
+//                mg.getMainClient().getAndUpdateRealTime(),
+//                -31,
+//                2, 3,
+//                3213, null, null, null, null,
+//                null
+//        ));
+
+
+
         mg.getMainClient().getOutStock().addStockInQuery(new RequestStock(// отправить на сервер
-                mg.getMainClient().getAndUpdateRealTime(),
-                -31,
-                2, 3,
-                3213, null, null, null, null,
-                null
+                mg.getMainClient().getAndUpdateRealTime(), -31,
+                65, null,
+                null, null, null, null, null, null
         ));
+
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 //////////////////////////////////////////////////
 

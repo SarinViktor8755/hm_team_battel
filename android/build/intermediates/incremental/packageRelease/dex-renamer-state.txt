@@ -1,4 +1,4 @@
-#Sat May 22 11:08:15 ALMT 2021
+#Sat Jun 12 13:45:35 ALMT 2021
 file.9=F\:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\10\\libgdx-utils-0.13.2_53905f933dc1ab4677385eab1afbf5ea17d0280e\\classes.dex
 base.10=F\:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\10\\classes_74ecca2aaeeeec2e8df96a25d396e73f048f2ba8
 file.8=F\:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\10\\classes_05e2435de81bbe3f681852022c54b843f97a28c9\\classes.dex

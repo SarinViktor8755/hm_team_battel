@@ -3,6 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.utils.GdxNativesLoader;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.mygdx.game.Assets.AssetsManagerGame;
 import com.mygdx.game.LoadingScreen.LoadingScreen;
@@ -55,6 +56,7 @@ public class ZombiKiller extends Game {
 
     @Override
     public void create() {
+        GdxNativesLoader.load();
         this.startScreen = new StartScreen(this);
         this.assetsManagerGame = new AssetManager();
 //       // while (AssetsManagerGame.loadAsset(assetsManagerGame))

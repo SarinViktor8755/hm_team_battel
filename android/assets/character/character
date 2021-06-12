@@ -1,5 +1,5 @@
 
-Comand_charster1.png
+character1.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
@@ -353,16 +353,37 @@ shag0
   orig: 64, 64
   offset: 0, 0
   index: -1
-blood1
+bloods4
   rotate: false
   xy: 68, 938
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
-blood
+bloods3
   rotate: false
   xy: 134, 608
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+bloods2
+  rotate: false
+  xy: 200, 608
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+bloods1
+  rotate: false
+  xy: 266, 608
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+blood1
+  rotate: false
+  xy: 332, 608
   size: 64, 64
   orig: 64, 64
   offset: 0, 0

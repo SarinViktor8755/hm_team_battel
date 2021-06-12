@@ -35,8 +35,6 @@ import com.mygdx.game.SpaceMap.IndexMap;
 import com.mygdx.game.Service.OperationVector;
 
 
-
-
 public class MainGaming implements Screen {
     private World world;
 
@@ -58,6 +56,8 @@ public class MainGaming implements Screen {
     private AssetsManagerGame assetsManagerGame;
     private TextureRegion textureAim;
     private FillViewport viewport;
+
+    private boolean lighting_vailable_box2d;
 
 
     private RenderStartScreen renderStartScreen;
@@ -85,17 +85,26 @@ public class MainGaming implements Screen {
         this.zk = zk;
     }
 
-    public void createConnct(){
+    public void createConnct() {
         mainClient = new MainClient(this);
         mainClient.coonectToServer();
     }
 
     @Override
     public void show() {
-        GdxNativesLoader.load();
-        this.world = new World(new Vector2(0,0),true);
-        this.startScreen = new StartScreen(zk);
+        this.lighting_vailable_box2d = false;
 
+        try {
+            this.world = new World(new Vector2(0, 0), true); //java.lang.ExceptionInInitializerError
+            this.setLighting_box2d(true);
+           // throw  new java.lang.ExceptionInInitializerError();
+        } catch (ExceptionInInitializerError error) {
+            this.setLighting_box2d(false);
+            System.out.println("ExceptionInInitializerError");
+        }
+
+
+        this.startScreen = new StartScreen(zk);
         setAssetsManagerGame(AssetsManagerGame.loadAllAsset(getAssetsManagerGame()));
         this.audioEngine = new AudioEngine(this);
         this.gSpace = new GameSpace();
@@ -111,7 +120,6 @@ public class MainGaming implements Screen {
         viewport = new FillViewport(zk.WHIDE_SCREEN, zk.HIDE_SCREEN, camera);
 
         musicGame = new MusicGame();
-
         // System.out.println(zk.isAndroid() + "1111111111111111111111");
         if (zk.isAndroid()) apInput = new AndroidInputProcessorGamePley(this);
         else {
@@ -127,7 +135,11 @@ public class MainGaming implements Screen {
         renderStartScreen = new RenderStartScreen(zk, camera, viewport, getBatch());
         musicGame.pleyMusic();
         //System.out.println(RaitingService.generateTokken());
-        mainClient.sendToServer(-31,null,null,null,null,null,null,null, RaitingService.generateTokken());
+
+
+        ////////////////////////// ОТПРАВКА на сервер запроса по рейтингу
+        ///mainClient.sendToServer(-31,1,null,null,null,null,null,null, RaitingService.generateTokken());
+        /////////////////////////////////////////////////////////////////
 
     }
 
@@ -161,9 +173,9 @@ public class MainGaming implements Screen {
         batch.setProjectionMatrix(camera.combined);
 
         gHero.draw(batch, 1);
-       // camera.update();
-       //// RaitingService.generateTokken();
-        getHero().getLith().renderLights(camera); // освещение
+        // camera.update();
+        //// RaitingService.generateTokken();
+        if(this.isLighting_vailable_box2d())        getHero().getLith().renderLights(camera); // освещение
         batch.end();
 
         //System.out.println(delta);
@@ -291,5 +303,13 @@ public class MainGaming implements Screen {
 
     public IndexMap getIndexMap() {
         return indexMap;
+    }
+
+    public boolean isLighting_vailable_box2d() {
+        return lighting_vailable_box2d;
+    }
+
+    public void setLighting_box2d(boolean lighting_vailable_box2d) {
+        this.lighting_vailable_box2d = lighting_vailable_box2d;
     }
 }

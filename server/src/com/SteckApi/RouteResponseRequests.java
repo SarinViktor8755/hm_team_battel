@@ -174,6 +174,7 @@ public class RouteResponseRequests {  // роутр запросов
             Network.StockMess stockMess = new Network.StockMess();
             System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             System.out.println(stockMess.textM);
+            System.out.println(stockMess.tip);
             System.out.println(stockMess);
 
 

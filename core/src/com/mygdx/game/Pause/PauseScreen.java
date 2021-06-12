@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
@@ -29,6 +30,7 @@ public class PauseScreen implements Screen {
     private SpriteBatch spriteBatch;
 
     private BitmapFont font;
+    private BitmapFont cardText;
     private OrthographicCamera camera;
     private FillViewport viewport;
     private ShaderProgram shaderProgram;
@@ -45,12 +47,7 @@ public class PauseScreen implements Screen {
     Music music;
 
 
-
-
-
     public PauseScreen(ZombiKiller zombiKiller, boolean adShow) {
-        
-        AssetsManagerGame.loadAllAsset(zombiKiller.assetsManagerGame);
         this.zk = zombiKiller;
         this.durationPause = 10;
         TextureAtlas = zombiKiller.assetsManagerGame.get("pauseAsset/pause", TextureAtlas.class);
@@ -68,7 +65,6 @@ public class PauseScreen implements Screen {
     }
 
     public PauseScreen(ZombiKiller zombiKiller, float time, boolean adShow) { // запуск если игрок не отыграл полной игры - и не должен видеть рекламы
-        AssetsManagerGame.loadAllAsset(zombiKiller.assetsManagerGame);
         this.zk = zombiKiller;
         this.durationPause = time;
         TextureAtlas = zombiKiller.assetsManagerGame.get("pauseAsset/pause", TextureAtlas.class);
@@ -84,11 +80,14 @@ public class PauseScreen implements Screen {
 
     @Override
     public void show() {
+       // AssetsManagerGame.
+
         this.timer = 0;
         spriteBatch = new SpriteBatch();
         camera = new OrthographicCamera(zk.WHIDE_SCREEN, zk.HIDE_SCREEN);
         viewport = new FillViewport(zk.WHIDE_SCREEN, zk.HIDE_SCREEN, camera);
         font = new BitmapFont(Gdx.files.internal("fonts/font.fnt"));
+        cardText = new BitmapFont(Gdx.files.internal("fonts/font.fnt"));
         shaderProgram = new ShaderProgram(Gdx.files.internal("shaders/default.vert"), Gdx.files.internal("shaders/default.frag"));
 
         helper = TextureAtlas.findRegion("helper");
@@ -158,7 +157,9 @@ public class PauseScreen implements Screen {
 
         //System.out.println(getMoveKefMove());
         spriteBatch.setColor(1, 1, 1, 1);
-        font.draw(spriteBatch, "Next round : " + (int) ((durationPause / 1000) - timer) + " sec", pauseText.getRegionWidth() * .1f, 100);
+        font.draw(spriteBatch, "Next round : " + (int) ((durationPause / 1000) - timer) + " sec", pauseText.getRegionWidth() * .1f, 150);
+        cardText.draw(spriteBatch, "donat account:", pauseText.getRegionWidth() * .1f ,90);
+        cardText.draw(spriteBatch, "4048 4150 3097 7066", pauseText.getRegionWidth() * .1f ,50);
         spriteBatch.end();
         //promoTimeEnd = System.currentTimeMillis();
         if (promoTimeStart != 0 && adShow) {

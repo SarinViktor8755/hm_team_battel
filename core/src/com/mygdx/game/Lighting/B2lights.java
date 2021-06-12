@@ -13,7 +13,6 @@ import com.mygdx.game.MainGaming;
 import java.util.ArrayList;
 
 import box2dLight.ConeLight;
-import box2dLight.DirectionalLight;
 import box2dLight.PointLight;
 import box2dLight.RayHandler;
 

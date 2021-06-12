@@ -98,8 +98,7 @@ public class MainCharacter extends Actor {
         for (int i = 1; i < 6; i++) {
             this.maksTexture.add(mg.getAssetsManagerGame().get("character/character", TextureAtlas.class).findRegion("mask" + i));
         }
-
-        lith = new B2lights(mg);
+        if (mg.isLighting_vailable_box2d()) lith = new B2lights(mg);
     }
 
     public Weapons getWeapons() {
@@ -118,7 +117,7 @@ public class MainCharacter extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
 
-       // if(MathUtils.randomBoolean(.1f))lith.startBulletFlash(this.position.x + MathUtils.random(1000),this.position.y + MathUtils.random(1000));
+        // if(MathUtils.randomBoolean(.1f))lith.startBulletFlash(this.position.x + MathUtils.random(1000),this.position.y + MathUtils.random(1000));
 
         /////
 
@@ -137,7 +136,6 @@ public class MainCharacter extends Actor {
 //        System.out.println(mg.getHero().weapons.getTemp_weapon());
 //        System.out.println("__________________");
         try {
-
 
 
             mg.getIndexMap().renderBottomLevel();
@@ -234,7 +232,7 @@ public class MainCharacter extends Actor {
             this.weapons.updateWeapon();
         }
 
-        lith.upDateLights(this.position.x, this.position.y, this.cookAngle.angle());
+        if(mg.isLighting_vailable_box2d())lith.upDateLights(this.position.x, this.position.y, this.cookAngle.angle());
 
 
 //
@@ -309,7 +307,7 @@ public class MainCharacter extends Actor {
     public void attackPistol(int id) {  // добавленеи анимации удара + отправка на сервер сообщение о нанесение удара атака
         int x = (int) (position.x + cookAngle.x * 20);  // начальное положение выстрела
         int y = (int) (position.y + cookAngle.y * 20);
-        mg.getHero().getLith().startBulletFlash(position.x + cookAngle.x * 20,position.y + cookAngle.x * 20); ///вспышка
+        if(mg.isLighting_vailable_box2d())mg.getHero().getLith().startBulletFlash(position.x + cookAngle.x * 20, position.y + cookAngle.x * 20); ///вспышка
         int cookAngle = (int) (getCookAngle().angle());  // направление
         mg.getMainClient().getOutStock().addStockInQuery(new RequestStock(// отправить на сервер
                 mg.getMainClient().getAndUpdateRealTime(), 2,
@@ -334,7 +332,7 @@ public class MainCharacter extends Actor {
         getOtherPlayers().getPlayerToID(id).getAnimatonBody().addAnimationAttackShotgun();// добавляем анимацию
         int x = (int) (position.x + cookAngle.x * 20);  // начальное положение выстрела
         int y = (int) (position.y + cookAngle.y * 20);
-        mg.getHero().getLith().startBulletFlash(position.x + cookAngle.x * 20,position.y + cookAngle.x * 20); ///вспышка
+        if(mg.isLighting_vailable_box2d())mg.getHero().getLith().startBulletFlash(position.x + cookAngle.x * 20, position.y + cookAngle.x * 20); ///вспышка
 
         int cookAngle = (int) (getCookAngle().angle());  // направление
 
@@ -412,7 +410,7 @@ public class MainCharacter extends Actor {
     }
 
     public void renderPlayers(AnimationPers animationPers) {
-       // System.out.println(Ra.generateTokken());
+        // System.out.println(Ra.generateTokken());
         try {
             //mg.getBatch().setColor(1,.7f,.8f,1);
             Iterator<Integer> iter = mg.getHero().getOtherPlayers().getPlayersList().keySet().iterator();
@@ -448,8 +446,6 @@ public class MainCharacter extends Actor {
                                 1.375f, 1.375f, mg.getHero().getOtherPlayers().getRotationToId(key)); // mask
 
 
-
-
                 } catch (NullPointerException e) {
                     // System.out.println("rener other");
                     //e.printStackTrace();
@@ -465,12 +461,12 @@ public class MainCharacter extends Actor {
 
     public boolean updateViseblePlayer(float x, float y, int idP) {
         if (getLith().isAtShadow(x, y)) {
-           //System.out.println("+++");
+            //System.out.println("+++");
             //getOtherPlayers().setAlphaFromId(idP, getOtherPlayers().getAlphaFromId(idP) + (Gdx.graphics.getDeltaTime() * 1000));
             getOtherPlayers().setAlphaFromId(idP, 1);
-        }else {
+        } else {
             //System.out.println("---");
-           // getOtherPlayers().setAlphaFromId(idP, getOtherPlayers().getAlphaFromId(idP) - (Gdx.graphics.getDeltaTime() * 1000));
+            // getOtherPlayers().setAlphaFromId(idP, getOtherPlayers().getAlphaFromId(idP) - (Gdx.graphics.getDeltaTime() * 1000));
             getOtherPlayers().setAlphaFromId(idP, 1);
 
         }

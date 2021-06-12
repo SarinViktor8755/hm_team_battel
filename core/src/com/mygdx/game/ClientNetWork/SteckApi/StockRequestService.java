@@ -155,6 +155,7 @@ public class StockRequestService {
                 mg.getHero().getPoolBlood().addBulletOtherPlayerPistol(entry.getValue().nomer_pley);
             } catch (NullPointerException e) {
                 System.out.println("Error^ consumer Pistols");
+                e.printStackTrace();
             }
             return;
         }

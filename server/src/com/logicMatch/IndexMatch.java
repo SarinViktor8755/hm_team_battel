@@ -14,7 +14,7 @@ import static com.Network.register;
 public class IndexMatch extends Thread {
     private GameServer gameServer;
     private float MAX_TIMER_MATH = 4_000 * 3;
-    private float MAX_TIMER_PAUSE = 5_000;
+    private float MAX_TIMER_PAUSE = 5_000 * 5000;
     private final float STEP = 250;
     private float currentTimerMatch;
     private ScoreGame scoreGame;
