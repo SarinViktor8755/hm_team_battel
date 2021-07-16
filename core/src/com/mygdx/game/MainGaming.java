@@ -36,7 +36,7 @@ import com.mygdx.game.Service.OperationVector;
 
 
 public class MainGaming implements Screen {
-    private World world;
+    static private World world;
 
     public MusicGame musicGame;
 
@@ -56,6 +56,11 @@ public class MainGaming implements Screen {
     private AssetsManagerGame assetsManagerGame;
     private TextureRegion textureAim;
     private FillViewport viewport;
+
+
+    static {
+        world = new World(new Vector2(0, 0), true); //java.lang.ExceptionInInitializerError
+    }
 
     private boolean lighting_vailable_box2d;
 
@@ -95,7 +100,7 @@ public class MainGaming implements Screen {
         this.lighting_vailable_box2d = false;
 
         try {
-            this.world = new World(new Vector2(0, 0), true); //java.lang.ExceptionInInitializerError
+
             this.setLighting_box2d(true);
            // throw  new java.lang.ExceptionInInitializerError();
         } catch (ExceptionInInitializerError error) {

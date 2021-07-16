@@ -8,6 +8,10 @@
         "source": "F:\\game\\1211\\hm_team_battel\\android\\res\\drawable\\ic_launcher_background.xml"
     },
     {
+        "merged": "F:\\game\\LastVersioHLTB\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher_background.xml",
+        "source": "F:\\game\\LastVersioHLTB\\hm_team_battel\\android\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
         "merged": "D:\\PortableGit\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher_background.xml",
         "source": "D:\\PortableGit\\hm_team_battel\\android\\res\\drawable\\ic_launcher_background.xml"
     },

@@ -98,6 +98,8 @@ public class Hud implements Disposable {
         liderMathLabel = new Label("", style);
         notConnectLabel = new Label("", style);
 
+        style.font.getData().scale(Gdx.graphics.getWidth()/720);
+
         Table table = new Table();
         table.top();
         table.setFillParent(true);

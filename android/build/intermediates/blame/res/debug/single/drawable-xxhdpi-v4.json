@@ -1,5 +1,9 @@
 [
     {
+        "merged": "F:\\game\\LastVersioHLTB\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_launcher.png",
+        "source": "F:\\game\\LastVersioHLTB\\hm_team_battel\\android\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "F:\\game\\1211\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_launcher.png",
         "source": "F:\\game\\1211\\hm_team_battel\\android\\res\\drawable-xxhdpi\\ic_launcher.png"
     },

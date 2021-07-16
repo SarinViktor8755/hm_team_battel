@@ -13,15 +13,8 @@ public class DesktopLauncher implements AdAds {
         config.title = "HotLine Team Battle";
 
 
-//        GLFWVidMode videoMode = GLFW.glfwGetVideoMode(((Lwjgl3Monitor)monitor).monitorHandle);
-//        System.out.println(dm);
-
-
-
         config.width = ZombiKiller.WHIDE_SCREEN /2;
         config.height = ZombiKiller.HIDE_SCREEN /2;
-
-
 
         new LwjglApplication(new ZombiKiller(3), config);
 

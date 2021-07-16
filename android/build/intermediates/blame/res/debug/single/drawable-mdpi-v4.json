@@ -8,6 +8,10 @@
         "source": "F:\\game\\hm_team_battel\\android\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "F:\\game\\LastVersioHLTB\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "F:\\game\\LastVersioHLTB\\hm_team_battel\\android\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "F:\\game\\hm_team_battel\\hm_team_battel\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
         "source": "F:\\game\\hm_team_battel\\hm_team_battel\\android\\res\\drawable-mdpi\\ic_launcher.png"
     },
